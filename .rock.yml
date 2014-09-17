@@ -1,0 +1,10 @@
+runtime: ruby20
+
+env:
+  PATH: "${ROCK_PATH}/bin:${PATH}"
+
+build: |
+  rm -f ./bin/bundle
+  {{ parent }}
+
+run_web: bin/rails s
