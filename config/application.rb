@@ -8,6 +8,16 @@ Bundler.require(*Rails.groups)
 
 module Todo
   class Application < Rails::Application
+
+    if Rails.env.development?
+      env_variables_path = Rails.root.join('config', 'development_env_variables.rb')
+      if File.exists?(env_variables_path)
+        require env_variables_path
+      else
+        puts "WARNING:: You have not set up your environment variables!"
+      end
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
