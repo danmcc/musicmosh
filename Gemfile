@@ -47,3 +47,4 @@ end
 gem 'redcarpet'
 gem 'devise'
 gem 'searchbing'
+gem 'chronic'

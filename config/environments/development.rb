@@ -36,4 +36,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   RequireReloader.watch :video_fetcher
+  RequireReloader.watch :kimono_helper
 end
