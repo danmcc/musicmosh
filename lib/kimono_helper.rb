@@ -23,9 +23,9 @@ class KimonoHelper
     shows = []
 
     data['results']['collection1'].each do |item|
-      band_name = item['band']['text']
-      show_link = item['band']['href']
-      show_date = item['date']
+      artist_name = item['artist']['text']
+      url = item['artist']['href']
+      date = item['date']
 
       if show_date.is_a?(Array)
         show_date = show_date.grep(%r|/|).first # naively assume dates will have slashes
@@ -33,9 +33,9 @@ class KimonoHelper
       show_date = Chronic.parse(show_date)
 
       shows.push({
-        band_name: band_name,
-        show_link: show_link,
-        show_date: show_date,
+        artist_name: artist_name,
+        url: url,
+        date: date,
       })
     end
 

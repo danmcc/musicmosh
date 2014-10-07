@@ -1,0 +1,574 @@
+{
+  "name": "Mercury Lounge Calendar",
+  "count": 80,
+  "frequency": "On demand",
+  "version": 2,
+  "newdata": false,
+  "lastrunstatus": "success",
+  "thisversionrun": "Sun Oct 05 2014 20:44:48 GMT+0000 (UTC)",
+  "lastsuccess": "Sun Oct 05 2014 21:08:08 GMT+0000 (UTC)",
+  "results": {
+    "collection1": [
+      {
+        "band": {
+          "text": "Tiny Ruins",
+          "href": "http://www.mercuryloungenyc.com/event/677301-tiny-ruins-new-york"
+        },
+        "date": "Sun 10/05"
+      },
+      {
+        "band": {
+          "text": "The Deafening",
+          "href": "http://www.mercuryloungenyc.com/event/638263-deafening-sky-pony-new-york"
+        },
+        "date": "Sun 10/05"
+      },
+      {
+        "band": {
+          "text": "Nanuuk",
+          "href": "http://www.mercuryloungenyc.com/event/681449-nanuuk-men-in-my-head-new-york"
+        },
+        "date": "Mon 10/06"
+      },
+      {
+        "band": {
+          "text": "City Girl",
+          "href": "http://www.mercuryloungenyc.com/event/686279-city-girl-meghann-wright-new-york"
+        },
+        "date": "Mon 10/06"
+      },
+      {
+        "band": {
+          "text": "Kalle Mattson",
+          "href": "http://www.mercuryloungenyc.com/event/677595-kalle-mattson-new-york"
+        },
+        "date": "Tue 10/07"
+      },
+      {
+        "band": {
+          "text": "The Bone Chimes",
+          "href": "http://www.mercuryloungenyc.com/event/665989-bone-chimes-dirty-wings-new-york"
+        },
+        "date": "Tue 10/07"
+      },
+      {
+        "band": {
+          "text": "The Fauntleroys featuring Alejandro Escovedo, Nick Tremulis, Ivan Julian and Linda Pitmon",
+          "href": "http://www.mercuryloungenyc.com/event/653081-fauntleroys-alejandro-new-york"
+        },
+        "date": "Wed 10/08"
+      },
+      {
+        "band": {
+          "text": "Mean Creek",
+          "href": "http://www.mercuryloungenyc.com/event/691743-mean-creek-new-york"
+        },
+        "date": "Wed 10/08"
+      },
+      {
+        "band": {
+          "text": "Whiskey Shivers",
+          "href": "http://www.mercuryloungenyc.com/event/603347-whiskey-shivers-new-york"
+        },
+        "date": "Thu 10/09"
+      },
+      {
+        "band": {
+          "text": "Dragons of Zynth",
+          "href": "http://www.mercuryloungenyc.com/event/692123-dragons-zynth-new-york"
+        },
+        "date": "Thu 10/09"
+      },
+      {
+        "band": {
+          "text": "Miracles of Modern Science",
+          "href": "http://www.mercuryloungenyc.com/event/652635-miracles-modern-science-new-york"
+        },
+        "date": "Fri 10/10"
+      },
+      {
+        "band": {
+          "text": "The Vansaders",
+          "href": "http://www.mercuryloungenyc.com/event/677523-vansaders-dead-boots-valley-new-york"
+        },
+        "date": "Fri 10/10"
+      },
+      {
+        "band": {
+          "text": "Outernational",
+          "href": "http://www.mercuryloungenyc.com/event/690003-outernational-new-york"
+        },
+        "date": "Sat 10/11"
+      },
+      {
+        "band": {
+          "text": "The Lovely Feathers",
+          "href": "http://www.mercuryloungenyc.com/event/670813-lovely-feathers-heylady-new-york"
+        },
+        "date": "Sat 10/11"
+      },
+      {
+        "band": {
+          "text": "Little Sur",
+          "href": "http://www.mercuryloungenyc.com/event/698287-little-sur-new-york"
+        },
+        "date": "Sun 10/12"
+      },
+      {
+        "band": {
+          "text": "",
+          "href": ""
+        },
+        "date": "Mon 10/20"
+      },
+      {
+        "band": {
+          "text": "Shy Girls",
+          "href": "http://www.mercuryloungenyc.com/event/677327-shy-girls-new-york"
+        },
+        "date": "Sun 10/12"
+      },
+      {
+        "band": {
+          "text": "George Usher and Lisa Burns",
+          "href": "http://www.mercuryloungenyc.com/event/681373-george-usher-lisa-burns-new-york"
+        },
+        "date": "Mon 10/13"
+      },
+      {
+        "band": {
+          "text": "Roadkill Ghost Choir (Album Release)",
+          "href": "http://www.mercuryloungenyc.com/event/656423-roadkill-ghost-choir-album-new-york"
+        },
+        "date": "Tue 10/14"
+      },
+      {
+        "band": {
+          "text": "Kwesi K",
+          "href": "http://www.mercuryloungenyc.com/event/691283-kwesi-k-dave-wanamaker-new-york"
+        },
+        "date": "Tue 10/14"
+      },
+      {
+        "band": {
+          "text": "Priory",
+          "href": "http://www.mercuryloungenyc.com/event/687899-priory-new-york"
+        },
+        "date": "Wed 10/15"
+      },
+      {
+        "band": {
+          "text": "Tristen",
+          "href": "http://www.mercuryloungenyc.com/event/659885-tristen-new-york"
+        },
+        "date": "Wed 10/15"
+      },
+      {
+        "band": {
+          "text": "Hot 8 Brass Band",
+          "href": "http://www.mercuryloungenyc.com/event/565891-hot-8-brass-band-new-york"
+        },
+        "date": "Wed 10/15"
+      },
+      {
+        "band": {
+          "text": "il sogno del marinaio (with mike watt)",
+          "href": "http://www.mercuryloungenyc.com/event/585097-il-sogno-del-marinaio-mike-new-york"
+        },
+        "date": "Thu 10/16"
+      },
+      {
+        "band": {
+          "text": "",
+          "href": ""
+        },
+        "date": "Sun 11/02"
+      },
+      {
+        "band": {
+          "text": "The Last Bison",
+          "href": "http://www.mercuryloungenyc.com/event/647789-last-bison-new-york"
+        },
+        "date": "Thu 10/16"
+      },
+      {
+        "band": {
+          "text": "Motopony",
+          "href": "http://www.mercuryloungenyc.com/event/670711-motopony-new-york"
+        },
+        "date": "Fri 10/17"
+      },
+      {
+        "band": {
+          "text": "The Shivers",
+          "href": "http://www.mercuryloungenyc.com/event/666459-shivers-new-york"
+        },
+        "date": "Fri 10/17"
+      },
+      {
+        "band": {
+          "text": "Busdriver",
+          "href": "http://www.mercuryloungenyc.com/event/677311-busdriver-new-york"
+        },
+        "date": "Sat 10/18"
+      },
+      {
+        "band": {
+          "text": "Zeus",
+          "href": "http://www.mercuryloungenyc.com/event/647791-zeus-new-york"
+        },
+        "date": "Sat 10/18"
+      },
+      {
+        "band": {
+          "text": "Hunter Valentine",
+          "href": "http://www.mercuryloungenyc.com/event/677341-hunter-valentine-new-york"
+        },
+        "date": "Sun 10/19"
+      },
+      {
+        "band": {
+          "text": "Kat Wright & The Indomitable Soul Band",
+          "href": "http://www.mercuryloungenyc.com/event/656433-kat-wright-indomitable-soul-new-york"
+        },
+        "date": "Sun 10/19"
+      },
+      {
+        "band": {
+          "text": "Singularity",
+          "href": "http://www.mercuryloungenyc.com/event/695275-singularity-new-york"
+        },
+        "date": "Mon 10/20"
+      },
+      {
+        "band": {
+          "text": "Tom Vek",
+          "href": "http://www.mercuryloungenyc.com/event/641305-tom-vek-new-york"
+        },
+        "date": "Tue 10/21"
+      },
+      {
+        "band": {
+          "text": "Spookyland",
+          "href": "http://www.mercuryloungenyc.com/event/696335-spookyland-mighty-oaks-new-york"
+        },
+        "date": "Wed 10/22"
+      },
+      {
+        "band": {
+          "text": "Saint Pepsi",
+          "href": "http://www.mercuryloungenyc.com/event/686333-saint-pepsi-popstrangers-dog-new-york"
+        },
+        "date": "Wed 10/22"
+      },
+      {
+        "band": {
+          "text": "Heat",
+          "href": "http://www.mercuryloungenyc.com/event/694963-heat-avid-dancer-trixie-new-york"
+        },
+        "date": "Thu 10/23"
+      },
+      {
+        "band": {
+          "text": "DMA's",
+          "href": "http://www.mercuryloungenyc.com/event/692149-dmas-bears-den-peter-matthew-new-york"
+        },
+        "date": "Fri 10/24"
+      },
+      {
+        "band": {
+          "text": "No Way Josie",
+          "href": "http://www.mercuryloungenyc.com/event/691093-no-way-josie-sphynx-ocean-new-york"
+        },
+        "date": "Sat 10/25"
+      },
+      {
+        "band": {
+          "text": "Tits of Clay Presents Transformer: A Memorial for Lou Reed",
+          "href": "http://www.mercuryloungenyc.com/event/694953-tits-clay-transformer-new-york"
+        },
+        "date": "Mon 10/27"
+      },
+      {
+        "band": {
+          "text": "",
+          "href": ""
+        },
+        "date": "Mon 12/08"
+      },
+      {
+        "band": {
+          "text": "The Dirt Merchants",
+          "href": "http://www.mercuryloungenyc.com/event/695263-dirt-merchants-new-york"
+        },
+        "date": "Tue 10/28"
+      },
+      {
+        "band": {
+          "text": "",
+          "href": ""
+        },
+        "date": "Thu 12/18"
+      },
+      {
+        "band": {
+          "text": "Larkin Poe",
+          "href": "http://www.mercuryloungenyc.com/event/670815-larkin-poe-new-york"
+        },
+        "date": "Wed 10/29"
+      },
+      {
+        "band": {
+          "text": "Streets of Laredo",
+          "href": "http://www.mercuryloungenyc.com/event/677259-streets-laredo-new-york"
+        },
+        "date": "Wed 10/29"
+      },
+      {
+        "band": {
+          "text": "Mephiskapheles",
+          "href": "http://www.mercuryloungenyc.com/event/628111-mephiskapheles-new-york"
+        },
+        "date": "Thu 10/30"
+      },
+      {
+        "band": {
+          "text": "Booga Sugar",
+          "href": "http://www.mercuryloungenyc.com/event/638261-booga-sugar-new-york"
+        },
+        "date": "Fri 10/31"
+      },
+      {
+        "band": {
+          "text": "Lo-Fang",
+          "href": "http://www.mercuryloungenyc.com/event/677603-lo-fang-new-york"
+        },
+        "date": "Sat 11/01"
+      },
+      {
+        "band": {
+          "text": "Mother",
+          "href": "http://www.mercuryloungenyc.com/event/695399-mother-new-york"
+        },
+        "date": "Sat 11/01"
+      },
+      {
+        "band": {
+          "text": "Noah Gundersen",
+          "href": "http://www.mercuryloungenyc.com/event/633335-noah-gundersen-new-york"
+        },
+        "date": "Mon 11/03"
+      },
+      {
+        "band": {
+          "text": "Rah Rah",
+          "href": "http://www.mercuryloungenyc.com/event/693843-rah-rah-new-york"
+        },
+        "date": "Mon 11/03"
+      },
+      {
+        "band": {
+          "text": "Sundy Best",
+          "href": "http://www.mercuryloungenyc.com/event/686281-sundy-best-new-york"
+        },
+        "date": "Tue 11/04"
+      },
+      {
+        "band": {
+          "text": "Noah and the MegaFauna (Album Release)",
+          "href": "http://www.mercuryloungenyc.com/event/659587-noah-megafauna-album-new-york"
+        },
+        "date": "Wed 11/05"
+      },
+      {
+        "band": {
+          "text": "Nude Beach (Album Release)",
+          "href": "http://www.mercuryloungenyc.com/event/665943-nude-beach-album-release-new-york"
+        },
+        "date": "Wed 11/05"
+      },
+      {
+        "band": {
+          "text": "Avi Buffalo",
+          "href": "http://www.mercuryloungenyc.com/event/652631-avi-buffalo-new-york"
+        },
+        "date": "Thu 11/06"
+      },
+      {
+        "band": {
+          "text": "Benjamin Booker",
+          "href": "http://www.mercuryloungenyc.com/event/677265-benjamin-booker-new-york"
+        },
+        "date": "Thu 11/06"
+      },
+      {
+        "band": {
+          "text": "James McMurtry",
+          "href": "http://www.mercuryloungenyc.com/event/628093-james-mcmurtry-new-york"
+        },
+        "date": "Fri 11/07"
+      },
+      {
+        "band": {
+          "text": "PUP",
+          "href": "http://www.mercuryloungenyc.com/event/641307-pup-new-york"
+        },
+        "date": "Fri 11/07"
+      },
+      {
+        "band": {
+          "text": "Restorations",
+          "href": "http://www.mercuryloungenyc.com/event/677319-restorations-new-york"
+        },
+        "date": "Sat 11/08"
+      },
+      {
+        "band": {
+          "text": "Grifters",
+          "href": "http://www.mercuryloungenyc.com/event/664029-grifters-new-york"
+        },
+        "date": "Sat 11/08"
+      },
+      {
+        "band": {
+          "text": "Kate Voegele",
+          "href": "http://www.mercuryloungenyc.com/event/686745-kate-voegele-new-york"
+        },
+        "date": "Sun 11/09"
+      },
+      {
+        "band": {
+          "text": "Seekae",
+          "href": "http://www.mercuryloungenyc.com/event/681251-seekae-new-york"
+        },
+        "date": "Mon 11/10"
+      },
+      {
+        "band": {
+          "text": "Lorraine Leckie and Her Demons (CD Release)",
+          "href": "http://www.mercuryloungenyc.com/event/653659-lorraine-leckie-her-demons-new-york"
+        },
+        "date": "Thu 11/13"
+      },
+      {
+        "band": {
+          "text": "Caroline Rose",
+          "href": "http://www.mercuryloungenyc.com/event/690903-caroline-rose-new-york"
+        },
+        "date": "Thu 11/13"
+      },
+      {
+        "band": {
+          "text": "Say Hi",
+          "href": "http://www.mercuryloungenyc.com/event/696017-say-hi-new-york"
+        },
+        "date": "Fri 11/14"
+      },
+      {
+        "band": {
+          "text": "Caroline Smith",
+          "href": "http://www.mercuryloungenyc.com/event/691261-caroline-smith-new-york"
+        },
+        "date": "Fri 11/14"
+      },
+      {
+        "band": {
+          "text": "Ghostland Observatory’s Aaron Behrens & the Midnight Stroll",
+          "href": "http://www.mercuryloungenyc.com/event/639961-ghostland-observatory-s-aaron-new-york"
+        },
+        "date": "Sat 11/15"
+      },
+      {
+        "band": {
+          "text": "Mahogany",
+          "href": "http://www.mercuryloungenyc.com/event/694943-mahogany-new-york"
+        },
+        "date": "Sun 11/16"
+      },
+      {
+        "band": {
+          "text": "East India Youth",
+          "href": "http://www.mercuryloungenyc.com/event/686243-east-india-youth-new-york"
+        },
+        "date": "Mon 11/17"
+      },
+      {
+        "band": {
+          "text": "Lazer Cake",
+          "href": "http://www.mercuryloungenyc.com/event/694965-lazer-cake-teen-commandments-new-york"
+        },
+        "date": "Wed 11/19"
+      },
+      {
+        "band": {
+          "text": "Delicate Steve",
+          "href": "http://www.mercuryloungenyc.com/event/686915-delicate-steve-new-york"
+        },
+        "date": "Thu 11/20"
+      },
+      {
+        "band": {
+          "text": "Frances Cone",
+          "href": "http://www.mercuryloungenyc.com/event/687477-frances-cone-mcalister-drive-new-york"
+        },
+        "date": "Fri 11/21"
+      },
+      {
+        "band": {
+          "text": "Ikebe Shakedown",
+          "href": "http://www.mercuryloungenyc.com/event/677343-ikebe-shakedown-new-york"
+        },
+        "date": "Fri 11/21"
+      },
+      {
+        "band": {
+          "text": "Jay Stolar",
+          "href": "http://www.mercuryloungenyc.com/event/686241-jay-stolar-new-york"
+        },
+        "date": "Sat 11/22"
+      },
+      {
+        "band": {
+          "text": "Moon Hooch",
+          "href": "http://www.mercuryloungenyc.com/event/694947-moon-hooch-new-york"
+        },
+        "date": "Sat 11/22"
+      },
+      {
+        "band": {
+          "text": "Jonah Matranga",
+          "href": "http://www.mercuryloungenyc.com/event/641221-jonah-matranga-new-york"
+        },
+        "date": "Sun 11/23"
+      },
+      {
+        "band": {
+          "text": "The Wytches",
+          "href": "http://www.mercuryloungenyc.com/event/665603-wytches-new-york"
+        },
+        "date": "Mon 11/24"
+      },
+      {
+        "band": {
+          "text": "Max Creek",
+          "href": "http://www.mercuryloungenyc.com/event/686909-max-creek-new-york"
+        },
+        "date": "Fri 11/28"
+      },
+      {
+        "band": {
+          "text": "Centro-matic Farewell Tour",
+          "href": "http://www.mercuryloungenyc.com/event/690895-centro-matic-farewell-tour-new-york"
+        },
+        "date": "Fri 12/12"
+      },
+      {
+        "band": {
+          "text": "DOM",
+          "href": "http://www.mercuryloungenyc.com/event/694975-dom-new-york"
+        },
+        "date": "Sat 12/27"
+      }
+    ]
+  }
+}

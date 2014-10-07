@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2014-10-07
+  time: 2014-10-07 17:27:14
+  artist_id: 
+  venue_id: 
+
+two:
+  date: 2014-10-07
+  time: 2014-10-07 17:27:14
+  artist_id: 
+  venue_id: 

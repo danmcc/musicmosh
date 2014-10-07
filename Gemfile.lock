@@ -46,6 +46,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    currencies (0.4.2)
     debug_inspector (0.0.2)
     devise (3.4.0)
       bcrypt (~> 3.0)
@@ -156,6 +159,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   chronic
+  countries
   devise
   jbuilder (~> 2.0)
   jquery-rails
