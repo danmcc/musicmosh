@@ -16,5 +16,7 @@ vendor/
 /log
 /tmp
 
+.gems
 .idea
+.ruby-version
 config/development_env_variables.rb
