@@ -50,3 +50,7 @@ gem 'searchbing'
 gem 'chronic'
 gem 'countries'
 gem 'hash_validator'
+
+#Frontend Gems
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'autoprefixer-rails'
