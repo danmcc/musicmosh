@@ -1,0 +1,46 @@
+$primary-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$primary-text-color: #FFF;
+
+html,
+body {
+	background: url(image_path('background.jpg')) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	font-family: $primary-font;
+	font-weight: 200;
+	color: $primary-text-color;
+}
+
+.landing {
+	width: 600px;
+	margin-top: 70px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+
+	h1 {
+	  	font-size: 50px;
+		font-weight: bold;
+		line-height: 50px;
+	}
+
+	h2 {
+		margin-top: 30px;
+		font-weight: 200;
+	}
+
+	form {
+		margin-top: 70px;
+	}
+
+	input {
+		background-color: rgba(0, 0, 0, 0) !important;
+		text-align: center;
+		color: $primary-text-color;
+		height: 50px;
+		font-size: 30px;
+	}
+}
