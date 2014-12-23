@@ -43,4 +43,19 @@ body {
 		height: 50px;
 		font-size: 30px;
 	}
+
+	.location-picker {
+		color: lightgray;
+		text-align: left;
+		line-height: 0;
+
+		span {
+			cursor: pointer;
+		}
+
+		.loading-spinner {
+			position: relative;
+			margin-left: 14px;
+		}
+	}
 }

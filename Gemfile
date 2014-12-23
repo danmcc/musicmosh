@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 gem 'rails', '4.1.5'
 gem 'pg'
@@ -54,3 +55,4 @@ gem 'hash_validator'
 #Frontend Gems
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
+gem 'rails-assets-spin.js'
