@@ -12,6 +12,7 @@ body {
 	font-family: $primary-font;
 	font-weight: 200;
 	color: $primary-text-color;
+	padding-top: 10px;
 }
 
 .landing {
@@ -58,4 +59,40 @@ body {
 			margin-left: 14px;
 		}
 	}
+}
+
+.radio {
+	margin-top: 60px;
+
+	.youtube-player {
+		width: 720px;
+		float: left;
+
+		.skip-song {
+			display: block;
+			margin-top: 4px;
+			float: right;
+		}
+
+	}
+
+	.right-sidebar {
+		float: right;
+
+		.artist-details {
+			width: 100%;
+			font-size: larger;
+			font-weight: bold;
+			color: #FFF;
+			padding: 20px;
+			border: 1px dotted #777;
+			border-radius: 6px;
+			background-color: rgba(0,0,0,0.4)
+		}
+
+		.skip-artist {
+			margin-top: 20px;
+		}
+	}
+
 }
