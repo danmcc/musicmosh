@@ -49,8 +49,10 @@ gem 'redcarpet'
 gem 'devise'
 gem 'searchbing'
 gem 'chronic'
+gem 'mechanize'
 gem 'countries'
 gem 'hash_validator'
+gem 'figaro'
 
 #Frontend Gems
 gem 'bootstrap-sass', '~> 3.3.1'
