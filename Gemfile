@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 gem 'rails', '4.1.5'
 gem 'pg'
@@ -48,5 +49,12 @@ gem 'redcarpet'
 gem 'devise'
 gem 'searchbing'
 gem 'chronic'
+gem 'mechanize'
 gem 'countries'
 gem 'hash_validator'
+gem 'figaro'
+
+#Frontend Gems
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'autoprefixer-rails'
+gem 'rails-assets-spin.js'

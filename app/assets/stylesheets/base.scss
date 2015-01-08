@@ -1,0 +1,98 @@
+$primary-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$primary-text-color: #FFF;
+
+html,
+body {
+	background: url(image_path('background.jpg')) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	font-family: $primary-font;
+	font-weight: 200;
+	color: $primary-text-color;
+	padding-top: 10px;
+}
+
+.landing {
+	width: 600px;
+	margin-top: 70px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+
+	h1 {
+	  	font-size: 50px;
+		font-weight: bold;
+		line-height: 50px;
+	}
+
+	h2 {
+		margin-top: 30px;
+		font-weight: 200;
+	}
+
+	form {
+		margin-top: 70px;
+	}
+
+	input {
+		background-color: rgba(0, 0, 0, 0) !important;
+		text-align: center;
+		color: $primary-text-color;
+		height: 50px;
+		font-size: 30px;
+	}
+
+	.location-picker {
+		color: lightgray;
+		text-align: left;
+		line-height: 0;
+
+		span {
+			cursor: pointer;
+		}
+
+		.loading-spinner {
+			position: relative;
+			margin-left: 14px;
+		}
+	}
+}
+
+.radio {
+	margin-top: 60px;
+
+	.youtube-player {
+		width: 720px;
+		float: left;
+
+		.skip-song {
+			display: block;
+			margin-top: 4px;
+			float: right;
+		}
+
+	}
+
+	.right-sidebar {
+		float: right;
+
+		.artist-details {
+			width: 100%;
+			font-size: larger;
+			font-weight: bold;
+			color: #FFF;
+			padding: 20px;
+			border: 1px dotted #777;
+			border-radius: 6px;
+			background-color: rgba(0,0,0,0.4)
+		}
+
+		.skip-artist {
+			margin-top: 20px;
+		}
+	}
+
+}

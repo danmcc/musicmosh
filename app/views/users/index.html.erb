@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="landing center-block">
+	<h1>Music Mosh</h1>
+
+	<h2>Enter your location below and find out which artists are playing nearby</h2>
+
+	<%= form_tag('/temp') do %>
+	  <div class="form-group">
+		<%= text_field_tag 'query', nil, :placeholder => 'Location', :class => 'form-control' %>
+	  </div>
+	<% end %>
+	<div class="location-picker">
+	  <span id="location-button">Use my location <span id="loading-spinner" class="loading-spinner"></span></span>
+	</div>
+  </div>
+</div>

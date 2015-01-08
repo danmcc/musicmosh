@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Todo</title>
+  <title>Music Mosh</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag '//maps.googleapis.com/maps/api/js?sensor=false' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-<%= yield %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <%= render partial: "partials/flash_messages", flash: flash %>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
