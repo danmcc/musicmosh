@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20141007212704) do
   create_table "shows", force: true do |t|
     t.date     "date"
     t.time     "time"
+    t.string   "url"
     t.integer  "artist_id"
     t.integer  "venue_id"
     t.datetime "created_at"
