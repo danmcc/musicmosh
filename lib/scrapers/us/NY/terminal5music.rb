@@ -1,13 +1,30 @@
 require 'kimono_helper'
 
 module MusicMosh
-	module Scrapers
-		class USNYTerminal5music
-			def run
-				json_data = KimonoHelper.fetch('9gahya72')
-				shows = KimonoHelper.parse(json_data)
-				puts shows
-			end
-		end
-	end
+  module Scrapers
+    module US
+      module NY
+        class Terminal5music
+          def run
+            json_data = KimonoHelper.fetch('9gahya72')
+            shows = KimonoHelper.parse(json_data)
+            venue_hash = self.venue
+            venue_hash
+            shows.each do |show|
+              show[:venue] = venue_hash
+            end
+          end
+
+          def venue
+            venue = Hash.new
+            venue[:name] = 'Terminal 5 Music'
+            venue[:city] = 'New York'
+            venue[:state] = 'NY'
+            venue[:country] = 'US'
+            return venue
+          end
+        end
+      end
+    end
+  end
 end
