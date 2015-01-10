@@ -30,7 +30,7 @@ class KimonoHelper
 			if date.is_a?(Array)
 				show_date = Chronic.parse(date.first)
 			else
-          		show_date = Chronic.parse(date)
+				show_date = Chronic.parse(date)
 				if show_date.nil?
 					show_date = Time.parse(date)
 				end
