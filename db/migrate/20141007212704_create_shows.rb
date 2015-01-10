@@ -3,6 +3,7 @@ class CreateShows < ActiveRecord::Migration
     create_table :shows do |t|
       t.date :date
       t.time :time
+      t.string :url
       t.references :artist, index: true
       t.references :venue, index: true
 
