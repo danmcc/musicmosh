@@ -1,6 +1,8 @@
 <div class="row">
 	<h1>Now listening to artists playing in <%= CGI.unescape(params[:city]) %></h1>
 
+  	<p><%= @videos.inspect %></p>
+
   	<div class="radio">
 		<div class="col-md-8">
 		  <div class="youtube-player">
