@@ -1,3 +1,5 @@
+require 'youtube_video_fetcher'
+
 class LocationsController < ApplicationController
 
 	def show
@@ -20,6 +22,8 @@ class LocationsController < ApplicationController
 		@show = shows[current_artist - 1]
 
 		@next_show = shows[@next_artist - 1]
+
+		@videos = YoutubeVideoFetcher.fetch(@show.artist.name)
 
 	end
 
