@@ -53,6 +53,7 @@ gem 'mechanize'
 gem 'countries'
 gem 'hash_validator'
 gem 'figaro'
+gem 'google-api-client'
 
 #Frontend Gems
 gem 'bootstrap-sass', '~> 3.3.1'
