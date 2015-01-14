@@ -1,5 +1,5 @@
 <div class="row">
-	<h1>Now listening to artists playing in <%= params[:id] %></h1>
+	<h1>Now listening to artists playing in <%= CGI.unescape(params[:city]) %></h1>
 
   	<div class="radio">
 		<div class="col-md-8">
@@ -10,13 +10,19 @@
 		</div>
 	  	<div class="col-md-4 right-sidebar">
 		  <div class="artist-details">
-			<p>Kenny Wayne Shepherd</p>
-			<p>Playing at Hard Club</p>
-			<p>Tuesday, 3rd February 2015</p>
-			<button type="button" class="btn btn-default">Buy Tickets</button>
+			<p><%= @show.artist.name %></p>
+			<p>Playing at <%= @show.venue.name %></p>
+			<p><%= @show.show_date %></p>
+			<a href="<%= @show.url %>" class="btn btn-default">Buy Tickets</a>
 		  </div>
 		  <div class="skip-artist">
-			<button type="button" class="btn btn-default">Skip Artist (Next up: Another guy)</button>
+			<%= link_to "Next Artist: " + @next_show.artist.name, show_location_path(
+													  :country => 'US',
+													  :state => 'NY',
+													  :city => 'New+York',
+													  :artist => @next_artist
+											  ), class: "btn btn-default" %>
+
 		  </div>
 		</div>
 	</div>
