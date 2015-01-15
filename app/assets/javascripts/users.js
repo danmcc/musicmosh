@@ -38,7 +38,7 @@ $(document).ready(function() {
                     }
                     //only report if we got Good Stuff
                     if(city != '' && state != '') {
-                        $("#query").val(state);
+                        $("#query").val(city);
                     }
                 }
                 spinner.stop();
