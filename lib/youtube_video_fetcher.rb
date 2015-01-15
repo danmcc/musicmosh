@@ -18,11 +18,12 @@ class YoutubeVideoFetcher
     return client, youtube
   end
 
-  def self.fetch(band_name)
-
+  def self.search_youtube(band_name, results, duration)
     client, youtube = get_service
 
     begin
+      videos = []
+
       # Call the search.list method to retrieve results matching the specified
       # query term.
       search_response = client.execute!(
@@ -30,24 +31,33 @@ class YoutubeVideoFetcher
         :parameters => {
           :part => 'snippet',
           :q => band_name,
-          :maxResults => 10
+          :maxResults => results,
+          :type => 'video',
+          :videoDuration => duration
         }
       )
 
-      videos = []
-
-      # Add each result to the appropriate list, and then display the lists of
-      # matching videos, channels, and playlists.
       search_response.data.items.each do |search_result|
-        if search_result.id.kind == 'youtube#video'
-          videos.push(search_result.id.videoId)
-        end
+        videos.push(search_result.id.videoId)
       end
 
       return videos
 
     rescue Google::APIClient::TransmissionError => e
       puts e.result.body
+
     end
   end
+
+  def self.fetch(band_name)
+
+    videos = []
+
+    videos.push(search_youtube(band_name, 4, 'short')).flatten!
+    videos.push(search_youtube(band_name, 6, 'medium')).flatten!
+
+    return videos
+
+  end
+
 end
