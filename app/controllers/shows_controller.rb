@@ -29,7 +29,7 @@ class ShowsController < ApplicationController
 																											:state => 'NY',
 																											:city => 'New+York',
 																											:position => next_position
-																										), class: "btn btn-default"
+																										), class: "btn btn-default", id: "next-show-link"
 
 		@videos = YoutubeVideoFetcher.fetch(@show.artist.name)
 
