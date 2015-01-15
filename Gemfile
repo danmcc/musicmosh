@@ -54,6 +54,7 @@ gem 'countries'
 gem 'hash_validator'
 gem 'figaro'
 gem 'google-api-client'
+gem 'swfobject-rails'
 
 #Frontend Gems
 gem 'bootstrap-sass', '~> 3.3.1'
