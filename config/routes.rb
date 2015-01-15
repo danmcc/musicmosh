@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  get '/locations/:country/:state/:city/(:artist)', to: 'locations#show', as: 'show_location'
+  get '/shows/:country/:state/:city', to: 'shows#show', as: 'show_location'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
