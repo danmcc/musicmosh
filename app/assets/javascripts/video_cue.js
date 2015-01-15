@@ -12,7 +12,7 @@ function onYouTubePlayerReady(playerId) {
 }
 
 function nextArtist(event) {
-    
+
     //If the playlist has ended, redirect to the next artist
     if(event == 0)
     {

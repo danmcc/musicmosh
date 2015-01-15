@@ -1,5 +1,5 @@
 <div class="row">
-  <h1>Now listening to artists playing in <%= CGI.unescape(params[:city]) %></h1>
+  <h1>Listening to artists playing in <%= CGI.unescape(params[:city]) %></h1>
 
   <script type="text/javascript">
 	var artistVideoIDs = <%= @videos.to_json.html_safe %>
@@ -23,6 +23,7 @@
 	</div>
 	<div class="col-md-4 right-sidebar">
 	  <div class="artist-details">
+		<h1>Currently Playing</h1>
 		<p><%= @show.artist.name %></p>
 
 		<p>Playing at <%= @show.venue.name %></p>
