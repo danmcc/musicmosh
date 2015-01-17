@@ -1,4 +1,4 @@
-runtime: ruby20
+runtime: ruby21
 
 env:
   PATH: "${ROCK_PATH}/bin:${PATH}"
