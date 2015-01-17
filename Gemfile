@@ -39,6 +39,8 @@ group :development do
   gem 'awesome_print'
   gem 'spring'
   gem 'require_reloader'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
 end
 
 group :production do
