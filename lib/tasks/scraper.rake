@@ -55,13 +55,14 @@ namespace :musicmosh do
         return import_result[0]
       end
 
-    rescue
+    rescue => e
 
       # exceptions should be handled gracefully
       # without breaking the whole scraping operation
       #
       # TODO: maybe add the file to some list for future relaunching
-      puts $!
+      error_text = e.to_s + "\n" + e.backtrace.join("\n\t")
+      puts error_text
       puts "#{filename} threw an exception while running"
 
     rescue LoadError
