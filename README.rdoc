@@ -2,3 +2,7 @@
 
 * add ENV['YOUTUBE_API_KEY'], ENV['BING_API_KEY'], and ENV ['KIMONO_API_KEY'] to config/development_env_variables.rb
 * run `rake musicmosh:scraper`
+* To run rake via the console:
+** `require 'rake'`
+** `MusicMosh::Application.load_tasks`
+** `Rake::Task['musicmosh:scraper'].execute`
