@@ -12,7 +12,7 @@ namespace :musicmosh do
     Dir.glob('lib/scrapers/**/*.rb') do |file|
 
       puts "\n"
-      puts 'Currently scrapping: ' + file
+      puts 'Currently scraping: ' + file
 
       # Run the scraper and keep a counter with the total imported shows
       scraping_result = run_scraper(file)
@@ -20,7 +20,7 @@ namespace :musicmosh do
 
     end
 
-    puts "\nFinished scrapping shows"
+    puts "\nFinished scraping shows"
     puts "#{imported_shows} new shows were imported"
 
   end

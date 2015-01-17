@@ -9,7 +9,6 @@ module MusicMosh
             json_data = KimonoHelper.fetch('9gahya72')
             shows = KimonoHelper.parse(json_data)
             venue_hash = self.venue
-            venue_hash
             shows.each do |show|
               show[:venue] = venue_hash
             end
