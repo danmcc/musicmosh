@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Todo
+module MusicMosh
   class Application < Rails::Application
 
     if Rails.env.development?
