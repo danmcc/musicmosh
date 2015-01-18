@@ -57,6 +57,7 @@ gem 'hash_validator'
 gem 'figaro'
 gem 'google-api-client'
 gem 'swfobject-rails'
+gem 'koala'
 
 #Frontend Gems
 gem 'bootstrap-sass', '~> 3.3.1'
