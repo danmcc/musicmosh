@@ -35,7 +35,7 @@ namespace :musicmosh do
       class_name = 'MusicMosh::Scrapers' # initial modules
       class_name << '::' << split_filename[2].upcase # country
       class_name << '::' << split_filename[3].upcase # city
-      class_name << '::' << File.basename(split_filename[4].capitalize, '.rb') # venue
+      class_name << '::' << File.basename(split_filename[4].camelize, '.rb') # venue
 
       # Run the scraper and pass through the shows to the ShowImporter
       # for validation and saving in the DB
@@ -49,7 +49,7 @@ namespace :musicmosh do
         puts File.basename(split_filename[4].capitalize) + ": #{import_result} shows imported"
         return import_result
       else
-        puts 'Validation errors at ' + File.basename(split_filename[4].capitalize)
+        puts 'Validation errors at ' + File.basename(split_filename[4].camelize)
         ap import_result
         puts "#{import_result} shows imported"
         return import_result[0]

@@ -4,7 +4,7 @@ module MusicMosh
   module Scrapers
     module US
       module NY
-        class Terminal5music
+        class Terminal5Music
           def run
             json_data = KimonoHelper.fetch('9gahya72')
             shows = KimonoHelper.parse(json_data)
