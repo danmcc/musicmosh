@@ -13,6 +13,11 @@ class ShowsController < ApplicationController
 			}
 		).to_a.uniq!{ |s| s.artist_id }
 
+		if shows.nil?
+			#TODO - change the abort call with a view
+			abort('This location has no shows yet')
+		end
+
 		# if there isn't any artist key, assume it's 1
 		current_position = (params.has_key?(:position) ? params[:position].to_i : 1)
 
