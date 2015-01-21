@@ -1,4 +1,5 @@
 require 'koala'
+require 'chronic'
 
 class FacebookEventsFetcher
 
@@ -11,14 +12,22 @@ class FacebookEventsFetcher
 
     page_events = graph.get_object(page_id + '/events')
 
+    shows = []
+
     page_events.each do |event|
-      puts event['name']
-      puts event['start_time']
-      puts
+
+      shows << {
+        artist_name: event['name'],
+        url: 'https://www.facebook.com/events/' + event['id'],
+        date: Time.parse(event['start_time'])
+      }
+
     end
+
+    return shows
 
   end
 
-  fetch('MadisonSquareGarden')
+  puts fetch('MadisonSquareGarden')
 
 end
