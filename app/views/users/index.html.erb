@@ -4,9 +4,11 @@
 
 	<h2>Enter your location below and find out which artists are playing nearby</h2>
 
-	<%= form_tag('/temp') do %>
+	<%= form_tag '/shows', method: :get, :id => 'shows-form' do %>
 	  <div class="form-group">
-		<%= text_field_tag 'query', nil, :placeholder => 'Location', :class => 'form-control' %>
+		<%= text_field_tag 'city', nil, :placeholder => 'Location', :class => 'form-control' %>
+		<%= hidden_field_tag :country %>
+		<%= hidden_field_tag :state %>
 	  </div>
 	<% end %>
 	<div class="location-picker">
