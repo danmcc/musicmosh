@@ -66,19 +66,53 @@ $(document).ready(function() {
         var state = $("#state").val();
         var country = $("#country").val();
 
-        city = encodeURIComponent(city).toLowerCase();
-        state = encodeURIComponent(state).toLowerCase();
-
-        var baseUrl = showsForm.attr('action');
-
-        var completeUrl = baseUrl + '/' + country + '/' + state + '/' + city;
-
-        window.location.href = completeUrl;
-
-        console.log(baseUrl + '/' + country + '/' + state + '/' + city);
-
+        if(state == '' && country == '')
+        {
+            getStateAndCountryAndRedirect(city);
+        } else {
+            redirectToCity(city, state, country);
+        }
 
     });
 
 
 });
+
+function getStateAndCountryAndRedirect(city) {
+
+    var geocoder = new google.maps.Geocoder();
+    var state;
+    var country;
+
+    geocoder.geocode( { 'address': city}, function(results, status) {
+        console.log(results);
+        if( status == google.maps.GeocoderStatus.OK ) {
+            var result = results[0];
+            for (var i = 0, len = result.address_components.length; i < len; i++) {
+                var ac = result.address_components[i];
+                if (ac.types.indexOf("administrative_area_level_1") >= 0) state = ac.long_name;
+                if (ac.types.indexOf("country") >= 0) country = ac.short_name;
+            }
+        }
+
+        redirectToCity(city, state, country);
+
+    });
+}
+
+function redirectToCity(city, state, country) {
+
+    var showsForm = $("#shows-form");
+
+    city = encodeURIComponent(city).toLowerCase();
+    state = encodeURIComponent(state).toLowerCase();
+
+    var baseUrl = showsForm.attr('action');
+
+    var completeUrl = baseUrl + '/' + country + '/' + state + '/' + city;
+
+    //window.location.href = completeUrl;
+
+    console.log(baseUrl + '/' + country + '/' + state + '/' + city);
+
+}
