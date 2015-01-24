@@ -28,6 +28,4 @@ class FacebookEventsFetcher
 
   end
 
-  puts fetch('MadisonSquareGarden')
-
 end
