@@ -8,7 +8,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<!-- Static navbar -->
+<nav class="navbar navbar-inverse">
+  <div class="container">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	  <a class="navbar-brand" href="<%= root_path %>">Music Mosh</a>
+	</div>
+	<div id="navbar" class="navbar-collapse collapse">
+	  <ul class="nav navbar-nav">
+		<li><a href="#about">About</a></li>
+		<li><a href="#">Contact</a></li>
+	  </ul>
+	  <ul class="nav navbar-nav navbar-right">
+		<% if user_signed_in? %>
+			<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+		<% else %>
+			<li><a href="<%= new_user_session_path %>">Login</a></li>
+		<% end %>
+	  </ul>
+	</div>
+	<!--/.nav-collapse -->
+  </div>
+</nav>
   <div class="container">
     <div class="row">
       <div class="col-md-12">
