@@ -90,7 +90,7 @@ function getStateAndCountryAndRedirect(city) {
             var result = results[0];
             for (var i = 0, len = result.address_components.length; i < len; i++) {
                 var ac = result.address_components[i];
-                if (ac.types.indexOf("administrative_area_level_1") >= 0) state = ac.long_name;
+                if (ac.types.indexOf("administrative_area_level_1") >= 0) state = ac.short_name;
                 if (ac.types.indexOf("country") >= 0) country = ac.short_name;
             }
         }
@@ -104,8 +104,8 @@ function redirectToCity(city, state, country) {
 
     var showsForm = $("#shows-form");
 
-    city = encodeURIComponent(city).toLowerCase();
-    state = encodeURIComponent(state).toLowerCase();
+    city = encodeURIComponent(city).replace(/%20/g, "+").toLowerCase();
+    state = encodeURIComponent(state).replace(/%20/g, "+").toLowerCase();
 
     var baseUrl = showsForm.attr('action');
 
