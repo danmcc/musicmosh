@@ -49,6 +49,7 @@ end
 
 gem 'redcarpet'
 gem 'devise'
+gem 'omniauth-facebook'
 gem 'searchbing'
 gem 'chronic'
 gem 'mechanize'
