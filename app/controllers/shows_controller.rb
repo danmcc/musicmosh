@@ -30,9 +30,9 @@ class ShowsController < ApplicationController
 		next_show = shows[next_position - 1]
 
 		@link_to_next_show = view_context.link_to "Next Artist: " + next_show.artist.name, show_location_path(
-																											:country => 'US',
-																											:state => 'NY',
-																											:city => 'New+York',
+																											:country => params[:country],
+																											:state => params[:state],
+																											:city => params[:city],
 																											:position => next_position
 																										), class: "btn btn-default", id: "next-show-link"
 
