@@ -1,0 +1,31 @@
+// Place all the behaviors and hooks related to the matching controller here.
+// All this logic will automatically be available in application.js.
+
+var ready = function() {
+
+    $("#add-show-to-favorites").click( function() {
+
+		console.log('started favorite');
+
+		var new_favorites_path = "<%= Rails.application.routes.url_helpers.favorites_path %>";
+
+		var show_id = $("#add-show-to-favorites").data("show-id");
+
+		$.ajax({ url: new_favorites_path,
+			type: 'POST',
+			beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+			data: {
+				show_id: show_id
+			},
+			dataType: "json",
+			success: function(data) {
+				console.log(data);
+			}
+		});
+
+    });
+
+};
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
