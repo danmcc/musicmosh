@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   get '/shows/:country/:state/:city', to: 'shows#show', as: 'show_location'
 
+  resource :favorites
+
 end
