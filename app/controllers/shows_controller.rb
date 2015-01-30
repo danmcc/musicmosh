@@ -16,7 +16,7 @@ class ShowsController < ApplicationController
 		if shows.nil?
 			#TODO - change the abort call with a view
 			abort('This location has no shows yet')
-		end
+    end
 
 		# if there isn't any artist key, assume it's 1
 		current_position = (params.has_key?(:position) ? params[:position].to_i : 1)
@@ -26,6 +26,13 @@ class ShowsController < ApplicationController
 
 		# subtract 1 from the position to match the array, which is starts at 0
 		@show = shows[current_position - 1]
+
+    unless current_user.nil?
+      @favorite = Favorite.where(
+        user_id: current_user.id,
+        show_id: @show.id
+      ).first
+    end
 
 		next_show = shows[next_position - 1]
 
