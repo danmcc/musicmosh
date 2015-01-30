@@ -2,7 +2,7 @@
   <h1>Listening to artists playing in <%= CGI.unescape(params[:city]) %></h1>
 
   <script type="text/javascript">
-	var artistVideoIDs = <%= @videos.to_json.html_safe %>
+	  var artistVideoIDs = <%= @videos.to_json.html_safe %>;
   </script>
 
   <div class="radio">
@@ -24,22 +24,28 @@
 	<div class="col-md-4 right-sidebar">
 	  <div class="artist-details">
 		<h1>Currently Playing</h1>
+
 		<p><%= @show.artist.name %></p>
 
 		<p>Playing at <%= @show.venue.name %></p>
 
 		<p><%= @show.show_date %></p>
 
-		<p><button id="add-show-to-favorites" data-show-id="<%= @show.id %>" class="btn btn-default">
-		  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Favorite
-		</button></p>
-
+		<p>
+		  <% if @favorite.nil? %>
+		    <button id="add-show-to-favorites" data-show-id="<%= @show.id %>" class="btn btn-default">
+			  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Favorite
+			</button>
+		  <% else %>
+	        <button id="add-show-to-favorites" data-show-id="<%= @show.id %>" class="btn btn-primary">
+			  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Favorited
+			</button>
+		  <% end %>
+		</p>
 		<p><a href="<%= @show.url %>" class="btn btn-default">Buy Tickets</a></p>
-
 	  </div>
 	  <div class="skip-artist">
 		<%= @link_to_next_show %>
-
 	  </div>
 	</div>
   </div>
