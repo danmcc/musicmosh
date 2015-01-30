@@ -5,7 +5,7 @@ var ready = function() {
 
     $("#add-show-to-favorites").click( function() {
 
-		console.log('started favorite');
+
 
 		var new_favorites_path = "<%= Rails.application.routes.url_helpers.favorites_path %>";
 
@@ -17,9 +17,17 @@ var ready = function() {
 			data: {
 				show_id: show_id
 			},
-			dataType: "json",
 			success: function(data) {
+				if(data.success == 1) {
+					$("#add-show-to-favorites")
+							.removeClass('btn-default')
+							.addClass('btn-primary')
+							.html('<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Favorited')
+				}
+			},
+			error: function(data) {
 				console.log(data);
+				alert('Please login in order to use the Favorites feature')
 			}
 		});
 
