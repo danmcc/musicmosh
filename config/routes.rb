@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  get '/shows/:country/:state/:city', to: 'shows#show', as: 'show_location'
+  get '/shows/:country/:state/:city', to: 'shows#location', as: 'show_location'
 
-  resource :favorites
+  resources :favorites
+  resources :artists
 
 end
