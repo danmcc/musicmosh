@@ -2,7 +2,7 @@ require 'youtube_video_fetcher'
 
 class ShowsController < ApplicationController
 
-	def show
+  def location
 		shows = Show.order(date: :asc).joins(:venue).joins(:artist).where(
 			'shows.date >= :date AND venues.country = :country AND venues.state = :state AND venues.city = :city',
 			{
