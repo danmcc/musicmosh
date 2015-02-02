@@ -99,6 +99,8 @@ GEM
     jquery-rails (3.1.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.3)
+      railties (>= 3.2.16)
     json (1.8.1)
     jwt (1.2.0)
     koala (1.11.0)
@@ -242,6 +244,9 @@ GEM
     warden (1.2.3)
       rack (>= 1.0)
     webrobots (0.1.1)
+    will_paginate (3.0.7)
+    will_paginate-bootstrap (1.0.1)
+      will_paginate (>= 3.0.3)
 
 PLATFORMS
   ruby
@@ -260,6 +265,7 @@ DEPENDENCIES
   hash_validator
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-ui-rails
   koala
   mechanize
   omniauth-facebook
@@ -280,3 +286,5 @@ DEPENDENCIES
   swfobject-rails
   turbolinks
   uglifier (>= 1.3.0)
+  will_paginate
+  will_paginate-bootstrap
