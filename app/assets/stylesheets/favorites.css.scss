@@ -1,3 +1,35 @@
 // Place all the styles related to the favorites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pagination {
+  li {
+    a, span {
+      color: #FFF !important;
+      background-color: #555 !important;
+      border-color: #444 !important;
+    }
+  }
+
+  .active {
+    span {
+      background-color: #444 !important;
+      border-color: #333 !important;
+    }
+  }
+}
+
+.favorites {
+  p {
+    font-size: 2em;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .btn {
+    padding: 0 3px 0 3px;
+    margin: 0 2px 5px 0;
+  }
+}

@@ -1,7 +1,12 @@
 class FavoritesController < ApplicationController
 
-	def index
+  before_filter :authenticate_user!, :except => [:create]
 
+	def index
+    @favorites = current_user.favorites
+                   .includes(:show => :artist)
+                   .includes(:show => :venue)
+                   .paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def create

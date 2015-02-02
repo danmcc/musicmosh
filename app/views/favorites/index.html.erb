@@ -1,0 +1,15 @@
+<h1>Your Favorites</h1>
+
+<div class="favorites">
+	<% @favorites.each do |favorite| %>
+
+		<p>
+		  <%= link_to '<button class="btn btn-default"><span class="glyphicon glyphicon-play"></span></button>'.html_safe, root_path %>
+		  <%= favorite.show.artist.name %>, playing at <a><%= favorite.show.venue.name %></a> &mdash; <%= favorite.show.show_date %>
+		</p>
+
+	<% end %>
+
+	<p><%= will_paginate @favorites, renderer: BootstrapPagination::Rails %></p>
+
+</div>
