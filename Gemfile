@@ -41,6 +41,11 @@ group :development do
   gem 'require_reloader'
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
+  gem 'capybara'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
 end
 
 group :production do
