@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   resources :favorites
   resources :artists
+  resources :venues
 
 end
