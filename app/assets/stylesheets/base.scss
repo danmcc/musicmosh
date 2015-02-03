@@ -44,6 +44,14 @@ body {
 		font-size: 30px;
 	}
 
+  .submit-button {
+    padding-top: 4px;
+  }
+
+  .submit-button:hover {
+    color: #FFF;
+  }
+
 	.location-picker {
 		color: lightgray;
 		text-align: left;
