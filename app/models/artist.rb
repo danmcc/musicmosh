@@ -3,4 +3,8 @@ class Artist < ActiveRecord::Base
 
   validates :name, presence: true
 
+  def encoded_name
+    CGI.escape(self.name)
+  end
+
 end
