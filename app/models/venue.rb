@@ -1,5 +1,10 @@
 class Venue < ActiveRecord::Base
-  belongs_to :shows
+  has_many :shows
+
+  validates :name, presence: true
+  validates :country, presence: true
+  validates :state, presence: true
+  validates :city, presence: true
 
   def encoded_name
     CGI.escape(self.name)
