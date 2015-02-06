@@ -4,9 +4,9 @@ module MusicMosh
   module Scrapers
     module US
       module NY
-        class Terminal5Music
+        class MercuryLounge
           def run
-            json_data = KimonoHelper.fetch('ab9shpq4')
+            json_data = KimonoHelper.fetch('6wf16j5q')
             shows = KimonoHelper.parse(json_data)
             venue_hash = self.venue
             shows.each do |show|
@@ -16,7 +16,7 @@ module MusicMosh
 
           def venue
             venue = Hash.new
-            venue[:name] = 'Terminal 5 Music'
+            venue[:name] = 'Mercury Lounge'
             venue[:city] = 'New York'
             venue[:state] = 'NY'
             venue[:country] = 'US'
