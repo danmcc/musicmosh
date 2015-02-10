@@ -22,7 +22,7 @@ class ShowImporter
       validator = HashValidator.validate(show, show_validation)
       if validator.valid?
 
-        next if show[:artist_name].length == 0
+        next unless Artist.new({:name => show[:artist_name]}).valid?
 
         artist = Artist.find_or_create_by!(
           name: show[:artist_name]
