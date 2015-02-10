@@ -7,7 +7,7 @@ module MusicMosh
         class BeaconTheatre
           def run
             #kimono not working properly yet
-            return false
+            return []
             json_data = KimonoHelper.fetch('ab9shpq4')
             shows = KimonoHelper.parse(json_data)
             venue_hash = self.venue
