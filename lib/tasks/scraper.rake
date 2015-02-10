@@ -64,7 +64,7 @@ namespace :musicmosh do
       error_text = e.to_s + "\n" + e.backtrace.join("\n\t")
       puts error_text
       puts "#{filename} threw an exception while running"
-      raise e if Rails.env.development?
+      #raise e if Rails.env.development?
 
     rescue LoadError
       # TODO: failing to load a file should be immediately reported
