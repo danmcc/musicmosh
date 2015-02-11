@@ -23,35 +23,52 @@ class KimonoHelper
     shows = []
 
     data['results']['collection1'].each do |item|
-      date = item['date']
 
-      if date.is_a?(Array)
-        show_date = Chronic.parse(date.first)
-      else
-        show_date = Chronic.parse(date)
-        if show_date.nil?
-          show_date = Time.parse(date)
-        end
-      end
+      show_date = parse_date(item)
+
+      show_url = parse_url(item)
 
       if item['band'].is_a?(Array)
         item['band'].each do |band|
           shows << {
             artist_name: band['text'],
-            url: band['href'],
+            url: show_url,
             date: show_date,
           }
         end
       else
         shows << {
           artist_name: item['band']['text'],
-          url: item['band']['href'],
+          url: show_url,
           date: show_date,
         }
       end
     end
 
     return shows
+  end
+
+  def self.parse_url(item)
+    if item['band']['href'].nil?
+      show_url = item['url']['href']
+    else
+      show_url = item['band']['href']
+    end
+    show_url
+  end
+
+  def self.parse_date(item)
+    date = item['date']
+
+    if date.is_a?(Array)
+      show_date = Chronic.parse(date.first)
+    else
+      show_date = Chronic.parse(date)
+      if show_date.nil?
+        show_date = Time.parse(date)
+      end
+    end
+    show_date
   end
 
 end
