@@ -61,7 +61,8 @@ class KimonoHelper
     date = item['date']
 
     if date.is_a?(Array)
-      show_date = Chronic.parse(date.first)
+      #if the date had to be parsed into an array, merge it in a string and parse it
+      show_date = Chronic.parse(date.join(' '))
     else
       show_date = Chronic.parse(date)
       if show_date.nil?
