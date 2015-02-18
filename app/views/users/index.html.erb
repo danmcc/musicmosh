@@ -2,22 +2,19 @@
   <div class="landing center-block">
 	<h1>Music Mosh</h1>
 
-	<h2>Enter your location below and find out which artists are playing nearby</h2>
+	<h2>Choose a location below and find out which artists are playing nearby</h2>
 
-	<%= form_tag '/shows', method: :get, :id => 'shows-form' do %>
-	  <div class="form-group">
-		<div class="input-group">
-		<%= text_field_tag 'city', nil, :placeholder => 'Location', :class => 'form-control' %>
-		  <span class="input-group-btn">
-				<input type="submit" class="btn btn-default submit-button" value="Go!" />
-		   </span>
-		</div>
-		<%= hidden_field_tag :country %>
-		<%= hidden_field_tag :state %>
-	  </div>
-	<% end %>
-	<div class="location-picker">
-	  <span id="location-button">Use my location <span id="loading-spinner" class="loading-spinner"></span></span>
+	<div class="dropdown">
+	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+		Available Locations
+		<span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		<% @locations.each do |location| %>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="<%= location[:url] %>"><%= location[:name] %></a></li>
+		<% end %>
+	  </ul>
 	</div>
+
   </div>
 </div>

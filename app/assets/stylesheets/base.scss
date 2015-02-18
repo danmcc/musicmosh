@@ -44,6 +44,33 @@ body {
 		font-size: 30px;
 	}
 
+  .dropdown {
+    margin-top: 20px;
+    text-align: left;
+
+    button {
+      background-color: rgba(0, 0, 0, 0) !important;
+      color: $primary-text-color !important;
+      width: 100%;
+      font-size: 26px;
+    }
+
+    .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.4) !important;
+      width: 100%;
+      font-size: 24px;
+    }
+
+    li > a {
+      color: $primary-text-color !important;
+    }
+
+    li > a:hover {
+      background-color: rgba(0, 0, 0, 0.8) !important;
+    }
+
+  }
+
   .submit-button {
     padding-top: 4px;
   }
