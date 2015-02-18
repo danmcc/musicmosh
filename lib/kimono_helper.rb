@@ -37,8 +37,14 @@ class KimonoHelper
           }
         end
       else
+        if item['band'].is_a?(Hash) || item['band'].is_a?(Array)
+          artist = item['band']['text']
+        else
+          artist = item['band']
+        end
+
         shows << {
-          artist_name: item['band']['text'],
+          artist_name: artist,
           url: show_url,
           date: show_date,
         }
@@ -59,6 +65,10 @@ class KimonoHelper
 
   def self.parse_date(item)
     date = item['date']
+
+    if date.is_a?(Hash)
+      date = item['date']['text']
+    end
 
     if date.is_a?(Array)
       #if the date had to be parsed into an array, merge it in a string and parse it
