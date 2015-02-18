@@ -6,6 +6,8 @@ module MusicMosh
       module NV
         class HouseOfBlues
           def run
+            #faulty kimono API
+            return []
             json_data = KimonoHelper.fetch('9s6cltuu')
             shows = KimonoHelper.parse(json_data)
             venue_hash = self.venue
