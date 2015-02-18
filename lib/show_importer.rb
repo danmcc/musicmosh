@@ -1,5 +1,6 @@
 require 'hash_validator'
 require 'countries'
+require 'youtube_video_fetcher'
 
 class ShowImporter
 
@@ -23,6 +24,8 @@ class ShowImporter
       if validator.valid?
 
         next unless Artist.new({:name => show[:artist_name]}).valid?
+
+        next unless YoutubeVideoFetcher.fetch(show[:artist_name]).count > 0
 
         artist = Artist.find_or_create_by!(
           name: show[:artist_name]
