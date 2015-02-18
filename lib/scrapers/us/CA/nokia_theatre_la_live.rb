@@ -4,7 +4,7 @@ module MusicMosh
   module Scrapers
     module US
       module CA
-        class NokiaTheatreLALive
+        class NokiaTheatreLaLive
           def run
             json_data = KimonoHelper.fetch('a8g2edqq')
             shows = KimonoHelper.parse(json_data)
