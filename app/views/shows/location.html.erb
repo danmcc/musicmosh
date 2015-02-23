@@ -32,15 +32,7 @@
 		<p><%= @show.show_date %></p>
 
 		<p>
-		  <% if @favorite.nil? %>
-		    <button id="add-show-to-favorites" data-show-id="<%= @show.id %>" class="btn btn-default">
-			  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Favorite
-			</button>
-		  <% else %>
-	        <button id="add-show-to-favorites" data-show-id="<%= @show.id %>" class="btn btn-primary">
-			  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Favorited
-			</button>
-		  <% end %>
+		  <%= @favorite.show_button.html_safe %>
 		</p>
 		<p><a href="<%= @show.url %>" class="btn btn-default">Buy Tickets</a></p>
 	  </div>

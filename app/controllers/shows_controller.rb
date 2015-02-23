@@ -31,7 +31,11 @@ class ShowsController < ApplicationController
       @favorite = Favorite.where(
         user_id: current_user.id,
         show_id: @show.id
-      ).first
+      ).first_or_initialize
+    else
+      @favorite = Favorite.new(
+                            show_id: @show.id
+      )
     end
 
 		next_show = shows[next_position - 1]
