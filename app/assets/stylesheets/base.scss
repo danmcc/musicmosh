@@ -126,6 +126,10 @@ body {
       h1 {
         margin: 0 0 20px 0;
       }
+
+      .show-thumbs-down {
+        cursor: pointer;
+      }
 		}
 
 		.skip-artist {
@@ -142,4 +146,15 @@ a {
 a:hover {
   cursor: pointer;
   color: #fff;
+}
+
+.btn-dark {
+  color: #ffffff;
+  background-color: #444;
+  border-color: #222;
+}
+.btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active, .open .dropdown-toggle.btn-dark {
+  color: #ffffff;
+  background-color: #333;
+  border-color: #111;
 }
