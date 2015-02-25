@@ -92,7 +92,7 @@ Rails.application.configure do
     domain:         'musicmosh.com'
   }
 
-  Constructor::Application.middleware.use ExceptionNotification::Rack,
+  MusicMosh::Application.middleware.use ExceptionNotification::Rack,
     :email => {
       :email_prefix => "[MusicMosh Website Error] ",
       :sender_address => %{"notifier" <notifier@musicmosh.com>},
