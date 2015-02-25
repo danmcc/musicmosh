@@ -79,4 +79,23 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = { host: "musicmosh.com" }
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    address:        'smtp.sendgrid.net',
+    port:           '587',
+    authentication: :plain,
+    user_name:      ENV['SENDGRID_USERNAME'],
+    password:       ENV['SENDGRID_PASSWORD'],
+    domain:         'musicmosh.com'
+  }
+
+  MusicMosh::Application.middleware.use ExceptionNotification::Rack,
+    :email => {
+      :email_prefix => "[MusicMosh Website Error] ",
+      :sender_address => %{"notifier" <notifier@musicmosh.com>},
+      :exception_recipients => %w{dan@codeop.com ruigomes.eu@gmail.com}
+    }
 end
