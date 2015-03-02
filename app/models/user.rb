@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :lockable,
          :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :favorites
+  has_many :thumbs_downs
 
   validates :name, presence: true
 
@@ -22,7 +23,12 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name
+      user.skip_confirmation!
     end
+  end
+
+  def artists_to_skip
+    self.thumbs_downs.includes(:show => :artist).pluck(:artist_id)
   end
 
 end

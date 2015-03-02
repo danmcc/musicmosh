@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :favorites
   resources :artists
   resources :venues
+  resources :thumbs_down
 
 end

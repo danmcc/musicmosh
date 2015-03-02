@@ -3,13 +3,21 @@ require 'youtube_video_fetcher'
 class ShowsController < ApplicationController
 
   def location
+
+    artists_to_skip = []
+
+    unless current_user.nil?
+      artists_to_skip = current_user.artists_to_skip
+    end
+
     shows = Show.order(date: :asc).joins(:venue).joins(:artist).where(
-      'shows.date >= :date AND venues.country = :country AND venues.state = :state AND venues.city = :city',
+      'shows.date >= :date AND venues.country = :country AND venues.state = :state AND venues.city = :city AND shows.artist_id NOT IN (:artists_to_skip)',
       {
         date: Date.today,
         country: params[:country],
         state: params[:state],
-        city: CGI.unescape(params[:city])
+        city: CGI.unescape(params[:city]),
+        artists_to_skip: artists_to_skip << 0 #append 0 to ensure we are passing a valid array
       }
     ).to_a.uniq! { |s| s.artist_id }
 
@@ -42,7 +50,7 @@ class ShowsController < ApplicationController
         show_id: @show.id
       )
 
-      @thumbs_down = Favorite.new(
+      @thumbs_down = ThumbsDown.new(
         show_id: @show.id
       )
     end

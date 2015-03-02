@@ -9,11 +9,11 @@ class ThumbsDown < ActiveRecord::Base
 
   def show_button
     if self.new_record?
-      '<button class="btn btn-dark">
+      '<button id="thumbs-down-show" data-show-id="' + show.id.to_s + '" class="btn btn-default">
         <i class="fa fa-thumbs-o-down show-thumbs-down"></i>
       </button>'
     else
-      '<button class="btn btn-primary">
+      '<button id="thumbs-down-show" data-show-id="' + show.id.to_s + '" class="btn btn-dark">
           <i class="fa fa-thumbs-o-down show-thumbs-down"></i>
         </button>'
     end

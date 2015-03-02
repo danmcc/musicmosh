@@ -1,0 +1,37 @@
+// Place all the behaviors and hooks related to the matching controller here.
+// All this logic will automatically be available in application.js.
+
+var ready = function() {
+
+	$("#thumbs-down-show").click( function() {
+
+		var new_favorites_path = "<%= Rails.application.routes.url_helpers.thumbs_down_index_path %>";
+
+		var show_id = $("#thumbs-down-show").data("show-id");
+
+		$.ajax({ url: new_favorites_path,
+			type: 'POST',
+			beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+			data: {
+				show_id: show_id
+			},
+			success: function(data) {
+				if(data.success == 1) {
+					$("#thumbs-down-show")
+							.removeClass('btn-default')
+							.addClass('btn-dark')
+				}
+			},
+			error: function(data) {
+				console.log(data);
+				alert('Please login in order to use the Thumbs Down feature')
+			}
+		});
+
+	});
+
+
+};
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
