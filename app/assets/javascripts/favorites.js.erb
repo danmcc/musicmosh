@@ -3,7 +3,7 @@
 
 var ready = function() {
 
-    $("#add-show-to-favorites").click( function() {
+	$(document).on('click', '#add-show-to-favorites', function() {
 
 		var new_favorites_path = "<%= Rails.application.routes.url_helpers.favorites_path %>";
 
@@ -17,10 +17,14 @@ var ready = function() {
 			},
 			success: function(data) {
 				if(data.success == 1) {
+					console.log(data);
 					$("#add-show-to-favorites")
+							.attr("id","remove-show-from-favorites")
+							.data("favorite-id", data.favorite_id)
 							.removeClass('btn-default')
 							.addClass('btn-primary')
 							.html('<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Favorited')
+
 				}
 			},
 			error: function(data) {
@@ -29,7 +33,35 @@ var ready = function() {
 			}
 		});
 
-    });
+	});
+
+	$(document).on('click', '#remove-show-from-favorites', function() {
+
+		var favorites_path = "<%= Rails.application.routes.url_helpers.favorites_path %>";
+
+		var favorite_id = $("#remove-show-from-favorites").data("favorite-id");
+
+		$.ajax({
+			url: favorites_path + '/' + favorite_id,
+			type: 'DELETE',
+			beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+			data: {	},
+			success: function(data) {
+				if(data.success == 1) {
+					$("#remove-show-from-favorites")
+							.attr("id","add-show-to-favorites")
+							.removeClass('btn-primary')
+							.addClass('btn-default')
+							.html('<span class="glyphicon glyphicon-star" aria-hidden="true"></span> Favorite')
+				}
+			},
+			error: function(data) {
+				console.log(data);
+				alert('Please login in order to use the Favorites feature')
+			}
+		});
+
+	});
 
 };
 

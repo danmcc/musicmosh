@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   get '/shows/:country/:state/:city', to: 'shows#location', as: 'show_location'
 
-  resources :favorites
   resources :artists
   resources :venues
+  resources :favorites
   resources :thumbs_down
 
 end

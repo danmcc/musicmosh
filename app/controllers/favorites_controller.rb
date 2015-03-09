@@ -28,7 +28,10 @@ class FavoritesController < ApplicationController
     )
 
     if favorite.save
-      output = {'success' => 1}.to_json
+      output = {
+        'success' => 1,
+        'favorite_id' => favorite.id
+      }.to_json
     else
       output = {'success' => 0}.to_json
     end
@@ -38,7 +41,22 @@ class FavoritesController < ApplicationController
 				render :json => output
 			}
 		end
-	end
+  end
 
+  def destroy
+    favorite = Favorite.find(params[:id])
+
+    if favorite.destroy!
+      output = {'success' => 1}.to_json
+    else
+      output = {'success' => 0}.to_json
+    end
+
+    respond_to do |format|
+      format.json {
+        render :json => output
+      }
+    end
+  end
 
 end

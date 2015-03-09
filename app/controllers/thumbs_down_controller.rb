@@ -28,6 +28,25 @@ class ThumbsDownController < ApplicationController
     )
 
     if thumbs_down.save
+      output = {
+        'success' => 1,
+        'thumbs_down_id' => thumbs_down.id
+      }.to_json
+    else
+      output = {'success' => 0}.to_json
+    end
+
+    respond_to do |format|
+      format.json {
+        render :json => output
+      }
+    end
+  end
+
+  def destroy
+    thumbs_down = ThumbsDown.find(params[:id])
+
+    if thumbs_down.destroy!
       output = {'success' => 1}.to_json
     else
       output = {'success' => 0}.to_json

@@ -13,7 +13,7 @@ class Favorite < ActiveRecord::Base
 			  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Favorite
 			</button>'
     else
-      '<button id="add-show-to-favorites" data-show-id="' + show.id.to_s + '" class="btn btn-primary">
+      '<button id="remove-show-from-favorites" data-show-id="' + show.id.to_s + '" data-favorite-id="' + self.id.to_s + '" class="btn btn-primary">
           <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Favorited
         </button>'
     end
