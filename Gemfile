@@ -68,6 +68,7 @@ gem 'koala'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
 
 #Frontend Gems
 gem 'bootstrap-sass', '~> 3.3.1'

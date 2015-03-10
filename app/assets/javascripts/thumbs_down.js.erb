@@ -1,63 +1,62 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-var ready = function() {
+$(document).on('click', '#thumbs-down-show', function () {
 
-	$(document).on('click', '#thumbs-down-show', function() {
+	var new_thumbs_down_path = "<%= Rails.application.routes.url_helpers.thumbs_down_index_path %>";
 
-		var new_thumbs_down_path = "<%= Rails.application.routes.url_helpers.thumbs_down_index_path %>";
+	var show_id = $("#thumbs-down-show").data("show-id");
 
-		var show_id = $("#thumbs-down-show").data("show-id");
-
-		$.ajax({ url: new_thumbs_down_path,
-			type: 'POST',
-			beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-			data: {
-				show_id: show_id
-			},
-			success: function(data) {
-				if(data.success == 1) {
-					$("#thumbs-down-show")
-							.removeClass('btn-default')
-							.addClass('btn-dark')
-							.attr('id', 'remove-thumbs-down')
-							.data('thumbs-down-id', data.thumbs_down_id)
-				}
-			},
-			error: function(data) {
-				console.log(data);
-				alert('Please login in order to use the Thumbs Down feature')
+	$.ajax({
+		url: new_thumbs_down_path,
+		type: 'POST',
+		beforeSend: function (xhr) {
+			xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+		},
+		data: {
+			show_id: show_id
+		},
+		success: function (data) {
+			if (data.success == 1) {
+				$("#thumbs-down-show")
+						.removeClass('btn-default')
+						.addClass('btn-dark')
+						.attr('id', 'remove-thumbs-down')
+						.data('thumbs-down-id', data.thumbs_down_id)
 			}
-		});
-
+		},
+		error: function (data) {
+			console.log(data);
+			alert('Please login in order to use the Thumbs Down feature')
+		}
 	});
 
-	$(document).on('click', '#remove-thumbs-down', function() {
+});
 
-		var thumbs_down_path = "<%= Rails.application.routes.url_helpers.thumbs_down_index_path %>";
+$(document).on('click', '#remove-thumbs-down', function () {
 
-		var thumbs_down_id = $("#remove-thumbs-down").data("thumbs-down-id");
+	var thumbs_down_path = "<%= Rails.application.routes.url_helpers.thumbs_down_index_path %>";
 
-		$.ajax({ url: thumbs_down_path + '/' + thumbs_down_id,
-			type: 'DELETE',
-			beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-			data: {	},
-			success: function(data) {
-				if(data.success == 1) {
-					$("#remove-thumbs-down")
-							.removeClass('btn-dark')
-							.addClass('btn-default')
-							.attr('id', 'thumbs-down-show')
-				}
-			},
-			error: function(data) {
-				alert('Please login in order to use the Thumbs Down feature')
+	var thumbs_down_id = $("#remove-thumbs-down").data("thumbs-down-id");
+
+	$.ajax({
+		url: thumbs_down_path + '/' + thumbs_down_id,
+		type: 'DELETE',
+		beforeSend: function (xhr) {
+			xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+		},
+		data: {},
+		success: function (data) {
+			if (data.success == 1) {
+				$("#remove-thumbs-down")
+						.removeClass('btn-dark')
+						.addClass('btn-default')
+						.attr('id', 'thumbs-down-show')
 			}
-		});
-
+		},
+		error: function (data) {
+			alert('Please login in order to use the Thumbs Down feature')
+		}
 	});
 
-};
-
-$(document).ready(ready)
-$(document).on('page:load', ready)
+});
