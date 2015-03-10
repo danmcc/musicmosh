@@ -13,4 +13,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def manage
+    @favorites = current_user.favorites
+                   .includes(:show => :artist)
+                   .includes(:show => :venue)
+
+    @thumbs_down = current_user.thumbs_downs
+                    .includes(:show => :artist)
+                    .includes(:show => :venue)
+
+
+  end
+
 end

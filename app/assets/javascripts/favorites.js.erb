@@ -69,3 +69,33 @@ $(document).on('click', '#remove-show-from-favorites', function () {
 	});
 
 });
+
+$(document).on('click', '.delete-favorite', function () {
+
+	var favorites_path = "<%= Rails.application.routes.url_helpers.favorites_path %>";
+
+	var favorite_id = $(this).data("favorite-id");
+
+	var row = $(this).closest('tr');
+
+	$.ajax({
+		url: favorites_path + '/' + favorite_id,
+		type: 'DELETE',
+		beforeSend: function (xhr) {
+			xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+		},
+		data: {},
+		success: function (data) {
+			if (data.success == 1) {
+				var dTable = $('#favorites-table').dataTable().api();
+				dTable.row(row).remove().draw();
+				row.remove();
+			}
+		},
+		error: function (data) {
+			console.log(data);
+			alert('Please login in order to use the Favorites feature')
+		}
+	});
+
+});

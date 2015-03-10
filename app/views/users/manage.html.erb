@@ -1,0 +1,40 @@
+
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.css">
+
+<script src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$('#favorites-table').DataTable();
+	});
+</script>
+
+<table id="favorites-table" class="table">
+  <thead>
+  	<th>Artist</th>
+	<th>Venue</th>
+	<td>Date</td>
+	<th>Actions</th>
+  </thead>
+  <tbody>
+	  <% if @favorites.each do |favorite| %>
+
+		  <tr>
+			<td><%= favorite.show.artist.name %></td>
+			<td><%= link_to favorite.show.venue.name, venue_path(favorite.show.venue.encoded_name) %></td>
+			<td><%= favorite.show.show_date %></td>
+			<td>
+			  <%= link_to '<button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-play"></span></button>'.html_safe, artist_path(favorite.show.artist.encoded_name) %>
+			  &nbsp;
+			  <button class="delete-favorite btn btn-danger btn-xs" data-favorite-id="<%= favorite.id %>"><span class="fa fa-trash-o"></span></button>
+			</td>
+		  </tr>
+
+	  <% end.empty? %>
+
+		  <p>You have no favorites yet. Start listening!</p>
+
+	  <% end %>
+  </tbody>
+</table>

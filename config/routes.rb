@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/shows/:country/:state/:city', to: 'shows#location', as: 'show_location'
 
+  get '/users/manage', to: 'users#manage', as: 'manage_users_likes'
+
   resources :artists
   resources :venues
   resources :favorites
