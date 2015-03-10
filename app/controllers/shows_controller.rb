@@ -32,7 +32,7 @@ class ShowsController < ApplicationController
     # cycle through the artists
     next_position = (shows[current_position + 1].nil? ? 1 : current_position + 1)
 
-    # subtract 1 from the position to match the array, which is starts at 0
+    # subtract 1 from the position to match the array, which starts at 0
     @show = shows[current_position - 1]
 
     unless current_user.nil?
