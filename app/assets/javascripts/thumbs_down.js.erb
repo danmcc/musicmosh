@@ -60,3 +60,33 @@ $(document).on('click', '#remove-thumbs-down', function () {
 	});
 
 });
+
+$(document).on('click', '.delete-thumbs-down', function () {
+
+	var thumbs_down_path = "<%= Rails.application.routes.url_helpers.thumbs_down_index_path %>";
+
+	var thumbs_down_id = $(this).data("thumbs-down-id");
+
+	var row = $(this).closest('tr');
+
+	$.ajax({
+		url: thumbs_down_path + '/' + thumbs_down_id,
+		type: 'DELETE',
+		beforeSend: function (xhr) {
+			xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+		},
+		data: {},
+		success: function (data) {
+			if (data.success == 1) {
+				var dTable = $('#thumbs-down-table').dataTable().api();
+				dTable.row(row).remove().draw();
+				row.remove();
+			}
+		},
+		error: function (data) {
+			console.log(data);
+			alert('Please login in order to use the Thumbs Down feature')
+		}
+	});
+
+});

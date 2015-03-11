@@ -7,34 +7,90 @@
 <script>
 	$(document).ready(function(){
 		$('#favorites-table').DataTable();
+		$('#thumbs-down-table').DataTable();
 	});
 </script>
 
-<table id="favorites-table" class="table">
-  <thead>
-  	<th>Artist</th>
-	<th>Venue</th>
-	<td>Date</td>
-	<th>Actions</th>
-  </thead>
-  <tbody>
-	  <% if @favorites.each do |favorite| %>
+<div class="row">
+  <h1 class="page-title">Music Preferences</h1>
 
-		  <tr>
-			<td><%= favorite.show.artist.name %></td>
-			<td><%= link_to favorite.show.venue.name, venue_path(favorite.show.venue.encoded_name) %></td>
-			<td><%= favorite.show.show_date %></td>
-			<td>
-			  <%= link_to '<button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-play"></span></button>'.html_safe, artist_path(favorite.show.artist.encoded_name) %>
-			  &nbsp;
-			  <button class="delete-favorite btn btn-danger btn-xs" data-favorite-id="<%= favorite.id %>"><span class="fa fa-trash-o"></span></button>
-			</td>
-		  </tr>
+  <div role="tabpanel">
 
-	  <% end.empty? %>
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs" role="tablist">
+	  <li role="presentation" class="active"><a href="#favorites" aria-controls="favorites" role="tab" data-toggle="tab">Favorites</a></li>
+	  <li role="presentation"><a href="#thumbs-down" aria-controls="thumbs-down" role="tab" data-toggle="tab">Thumbs Down</a></li>
+	</ul>
 
-		  <p>You have no favorites yet. Start listening!</p>
+	<!-- Tab panes -->
+	<div class="tab-content">
+	  <div role="tabpanel" class="tab-pane active" id="favorites">
+		<br />
 
-	  <% end %>
-  </tbody>
-</table>
+		<table id="favorites-table" class="table">
+		  <thead>
+		  <th>Artist</th>
+		  <th>Venue</th>
+		  <td>Date</td>
+		  <th>Actions</th>
+		  </thead>
+		  <tbody>
+		  <% if @favorites.each do |favorite| %>
+
+			  <tr>
+				<td><%= favorite.show.artist.name %></td>
+				<td><%= link_to favorite.show.venue.name, venue_path(favorite.show.venue.encoded_name) %></td>
+				<td><%= favorite.show.show_date %></td>
+				<td>
+				  <%= link_to '<button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-play"></span></button>'.html_safe, artist_path(favorite.show.artist.encoded_name) %>
+				  &nbsp;
+				  <button class="delete-favorite btn btn-danger btn-xs" data-favorite-id="<%= favorite.id %>"><span class="fa fa-trash-o"></span></button>
+				</td>
+			  </tr>
+
+		  <% end.empty? %>
+
+			  <p>You have no favorites yet. Start listening!</p>
+
+		  <% end %>
+		  </tbody>
+		</table>
+	  </div>
+
+	  <div role="tabpanel" class="tab-pane" id="thumbs-down">
+		<br />
+
+		<table id="thumbs-down-table" class="table">
+		  <thead>
+		  <th>Artist</th>
+		  <th>Venue</th>
+		  <td>Date</td>
+		  <th>Actions</th>
+		  </thead>
+		  <tbody>
+		  <% if @thumbs_down.each do |thumbs_down| %>
+
+			  <tr>
+				<td><%= thumbs_down.show.artist.name %></td>
+				<td><%= link_to thumbs_down.show.venue.name, venue_path(thumbs_down.show.venue.encoded_name) %></td>
+				<td><%= thumbs_down.show.show_date %></td>
+				<td>
+				  <%= link_to '<button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-play"></span></button>'.html_safe, artist_path(thumbs_down.show.artist.encoded_name) %>
+				  &nbsp;
+				  <button class="delete-thumbs-down btn btn-danger btn-xs" data-thumbs-down-id="<%= thumbs_down.id %>"><span class="fa fa-trash-o"></span></button>
+				</td>
+			  </tr>
+
+		  <% end.empty? %>
+
+			  <p>You don't have any thumbs down yet.</p>
+
+		  <% end %>
+		  </tbody>
+		</table>
+	  </div>
+	</div>
+
+  </div>
+
+</div>
