@@ -1,0 +1,13 @@
+<div class="embed-responsive embed-responsive-16by9">
+  <div id="ytapiplayer">
+	You need Flash player 8+ and JavaScript enabled to view this video.
+  </div>
+
+  <script type="text/javascript">
+	  var params = {allowScriptAccess: "always"};
+	  var atts = {id: "artist-playlist-yt-player", "class": "embed-responsive-item"};
+	  swfobject.embedSWF("http://www.youtube.com/v/<%= @videos[0] %>?enablejsapi=1&playerapiid=ytplayer&version=3",
+			  "ytapiplayer", "720", "480", "8", null, null, params, atts);
+
+  </script>
+</div>
