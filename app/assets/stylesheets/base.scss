@@ -111,7 +111,6 @@ body {
 	}
 
 	.right-sidebar {
-		float: right;
 
 		.artist-details {
 			width: 100%;
@@ -157,4 +156,15 @@ a:hover {
   color: #ffffff;
   background-color: #333;
   border-color: #111;
+}
+
+@media (max-width: 992px) {
+
+  .right-sidebar {
+    margin-top: 10px;
+  }
+
+  .page-title {
+    padding: 0 10px 0 10px;
+  }
 }
