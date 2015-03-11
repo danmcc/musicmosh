@@ -1,5 +1,5 @@
 <div class="row">
-  <h1>Listening to <%= @artist.name %></h1>
+  <h1 class="page-title">Listening to <%= @artist.name %></h1>
 
   <script type="text/javascript">
 	  var artistVideoIDs = <%= @videos.to_json.html_safe %>;
@@ -7,18 +7,7 @@
 
   <div class="radio">
 	<div class="col-md-8">
-	  <div class="youtube-player">
-		<div id="ytapiplayer">
-		  You need Flash player 8+ and JavaScript enabled to view this video.
-		</div>
-
-		<script type="text/javascript">
-			var params = {allowScriptAccess: "always"};
-			var atts = {id: "artist-playlist-yt-player"};
-			swfobject.embedSWF("http://www.youtube.com/v/<%= @videos[0] %>?enablejsapi=1&playerapiid=ytplayer&version=3",
-					"ytapiplayer", "720", "480", "8", null, null, params, atts);
-		</script>
-	  </div>
+	  <%= render 'partials/youtube_player' %>
 	</div>
 	<div class="col-md-4 right-sidebar">
 	  <div class="artist-details">
