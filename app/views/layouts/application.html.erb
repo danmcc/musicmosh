@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>MusicMosh</title>
+  <%= render partial: "partials/google_analytics" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag '//maps.googleapis.com/maps/api/js?sensor=false&language=en' %>
@@ -45,6 +46,5 @@
       </div>
     </div>
   </div>
-
 </body>
 </html>
