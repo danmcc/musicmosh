@@ -4,6 +4,7 @@
   <title>MusicMosh</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= render partial: "partials/google_analytics" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -44,6 +45,6 @@
       </div>
     </div>
   </div>
-<%= render partial: "partials/google_analytics" %>
+<%= render partial: "partials/google_analytics_pageview" %>
 </body>
 </html>
