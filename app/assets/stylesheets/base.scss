@@ -12,6 +12,8 @@ body {
 	font-family: $primary-font;
 	font-weight: 200;
 	color: $primary-text-color;
+  height:100%;
+  min-height:100%;
 }
 
 .landing {
@@ -22,7 +24,7 @@ body {
 	text-align: center;
 
 	h1 {
-	  	font-size: 50px;
+	  font-size: 50px;
 		font-weight: bold;
 		line-height: 50px;
 	}
