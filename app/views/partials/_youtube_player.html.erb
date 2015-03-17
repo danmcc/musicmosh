@@ -1,21 +1,37 @@
 <div class="embed-responsive embed-responsive-16by9">
 
-  <script type="text/javascript" src="//www.youtube.com/iframe_api"></script>
   <script type="text/javascript">
-	  function onYouTubePlayerAPIReady() {
-		  var videoBox = document.getElementById('youtube-radio');
+	  var reloadYoutube = function () {
+		  /* if YT already initialized return */
+		  if (window.YT) { return; };
+		  var tag = document.createElement('script');
+		  tag.src = "https://www.youtube.com/iframe_api";
+		  var firstScriptTag = document.getElementsByTagName('script')[0];
+		  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	  };
 
-		  videoBox.ytplayer = new YT.Player(videoBox, {
+	  reloadYoutube();
+
+	  $(document).on('page:load', function() {
+		  onYouTubePlayerAPIReady();
+	  });
+
+	  var ytplayer = null;
+
+	  function onYouTubePlayerAPIReady() {
+
+		  if (!window.YT || window.ytplayer) {
+			  return;
+		  }
+
+		  ytplayer = new YT.Player('youtube-radio', {
 			  events: {
 				  'onReady': cuePlaylist
 			  },
 			  width: '720',
 			  height: '480'
-
 		  });
 	  }
-
-
   </script>
 
   <div id="youtube-radio">

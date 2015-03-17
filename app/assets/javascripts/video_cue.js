@@ -13,8 +13,10 @@ function nextArtist(event) {
     document.location.href = document.getElementById("next-show-link").getAttribute('href', 2);
   }
 
-  //When the video is cued and loaded, start playing
-  if (event.data == 5) {
+  //If the video has loaded and the user is not mobile
+  //start playing
+  if (event.data == 5 && !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+    console.log('melo');
     event.target.playVideo();
   }
 
