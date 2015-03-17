@@ -1,13 +1,25 @@
 <div class="embed-responsive embed-responsive-16by9">
-  <div id="ytapiplayer">
-	You need Flash player 8+ and JavaScript enabled to view this video.
-  </div>
 
+  <script type="text/javascript" src="//www.youtube.com/iframe_api"></script>
   <script type="text/javascript">
-	  var params = {allowScriptAccess: "always"};
-	  var atts = {id: "artist-playlist-yt-player", "class": "embed-responsive-item"};
-	  swfobject.embedSWF("http://www.youtube.com/v/<%= @videos[0] %>?enablejsapi=1&playerapiid=ytplayer&version=3",
-			  "ytapiplayer", "720", "480", "8", null, null, params, atts);
+	  function onYouTubePlayerAPIReady() {
+		  var videoBox = document.getElementById('youtube-radio');
+
+		  videoBox.ytplayer = new YT.Player(videoBox, {
+			  events: {
+				  'onReady': cuePlaylist
+			  },
+			  width: '720',
+			  height: '480'
+
+		  });
+	  }
+
 
   </script>
+
+  <div id="youtube-radio">
+
+  </div>
+
 </div>
