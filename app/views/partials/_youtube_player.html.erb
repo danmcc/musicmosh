@@ -3,7 +3,10 @@
   <script type="text/javascript">
 	  var reloadYoutube = function () {
 		  /* if YT already initialized return */
-		  if (window.YT) { return; };
+		  if (window.YT) {
+			  console.log("youtube already loaded");
+			  return;
+		  }
 		  var tag = document.createElement('script');
 		  tag.src = "https://www.youtube.com/iframe_api";
 		  var firstScriptTag = document.getElementsByTagName('script')[0];

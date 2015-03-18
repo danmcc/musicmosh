@@ -4,9 +4,6 @@
 
 $(document).on('click', '#add-show-to-favorites', function () {
 
-	var err = new Error();
-	console.log(err.fileName + ' line:' + err.lineNumber);
-
 	var new_favorites_path = "<%= Rails.application.routes.url_helpers.favorites_path %>";
 
 	var show_id = $("#add-show-to-favorites").data("show-id");
@@ -29,6 +26,10 @@ $(document).on('click', '#add-show-to-favorites', function () {
 						.removeClass('btn-default')
 						.addClass('btn-primary')
 						.html('<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Favorited')
+				$("#remove-thumbs-down")
+						.removeClass('btn-dark')
+						.addClass('btn-default')
+						.attr('id', 'thumbs-down-show')
 
 			}
 		},

@@ -21,7 +21,6 @@ function nextArtist(event) {
   //If the video has loaded and the user is not mobile
   //start playing
   if (event.data == 5 && !isMobile()) {
-    console.log('melo');
     event.target.playVideo();
   }
 

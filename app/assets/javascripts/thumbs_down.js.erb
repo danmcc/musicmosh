@@ -23,6 +23,12 @@ $(document).on('click', '#thumbs-down-show', function () {
 						.addClass('btn-dark')
 						.attr('id', 'remove-thumbs-down')
 						.data('thumbs-down-id', data.thumbs_down_id)
+
+				$("#remove-show-from-favorites")
+						.attr("id", "add-show-to-favorites")
+						.removeClass('btn-primary')
+						.addClass('btn-default')
+						.html('<span class="glyphicon glyphicon-star" aria-hidden="true"></span> Favorite')
 			}
 		},
 		error: function (data) {
@@ -52,6 +58,7 @@ $(document).on('click', '#remove-thumbs-down', function () {
 						.removeClass('btn-dark')
 						.addClass('btn-default')
 						.attr('id', 'thumbs-down-show')
+
 			}
 		},
 		error: function (data) {
