@@ -21,10 +21,7 @@ class ShowsController < ApplicationController
       }
     ).to_a.uniq! { |s| s.artist_id }
 
-    if shows.nil?
-      #TODO - change the abort call with a view
-      abort('This location has no shows yet')
-    end
+    raise ActionController::RoutingError.new('Not Found') if shows.nil?
 
     # if there isn't any artist key, assume it's 1
     current_position = (params.has_key?(:position) ? params[:position].to_i : 1)
@@ -34,6 +31,8 @@ class ShowsController < ApplicationController
 
     # subtract 1 from the position to match the array, which starts at 0
     @show = shows[current_position - 1]
+
+    raise ActionController::RoutingError.new('Not Found') if @show.nil?
 
     unless current_user.nil?
       @favorite = Favorite.where(
@@ -45,12 +44,21 @@ class ShowsController < ApplicationController
         user_id: current_user.id,
         show_id: @show.id
       ).first_or_initialize
+
+      @report = Report.where(
+        user_id: current_user.id,
+        show_id: @show.id
+      ).first_or_initialize
     else
       @favorite = Favorite.new(
         show_id: @show.id
       )
 
       @thumbs_down = ThumbsDown.new(
+        show_id: @show.id
+      )
+
+      @report = Report.new(
         show_id: @show.id
       )
     end

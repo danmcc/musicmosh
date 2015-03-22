@@ -1,0 +1,32 @@
+// Place all the behaviors and hooks related to the matching controller here.
+// All this logic will automatically be available in application.js.
+
+$(document).on('click', '#report-show', function () {
+
+	var new_report_path = "<%= Rails.application.routes.url_helpers.reports_path %>";
+
+	var show_id = $("#report-show").data("show-id");
+
+	$.ajax({
+		url: new_report_path,
+		type: 'POST',
+		beforeSend: function (xhr) {
+			xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+		},
+		data: {
+			show_id: show_id
+		},
+		success: function (data) {
+			if (data.success == 1) {
+				$("#report-show")
+						.attr("id", "show-reported")
+						.html('<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Reported')
+			}
+		},
+		error: function (data) {
+			console.log(data);
+			alert('Please login in order to use the Report feature')
+		}
+	});
+
+});

@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :venues
   resources :favorites
   resources :thumbs_down
+  resources :reports
 
 end
