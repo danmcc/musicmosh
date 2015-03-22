@@ -17,5 +17,4 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require spin.js
-//= require swfobject
 //= require_tree .
