@@ -164,6 +164,11 @@ a:hover {
   color: #333;
 }
 
+.modal-dialog {
+  z-index: 3000;
+  color: #000000;
+}
+
 @media (max-width: 992px) {
 
   .radio {

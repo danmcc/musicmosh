@@ -35,7 +35,7 @@ $(document).on('click', '#add-show-to-favorites', function () {
 		},
 		error: function (data) {
 			console.log(data);
-			alert('Please login in order to use the Favorites feature')
+			bootbox.alert('Please login in order to use the Favorites feature')
 		}
 	});
 
@@ -65,7 +65,7 @@ $(document).on('click', '#remove-show-from-favorites', function () {
 		},
 		error: function (data) {
 			console.log(data);
-			alert('Please login in order to use the Favorites feature')
+			bootbox.alert('Please login in order to use the Favorites feature')
 		}
 	});
 
@@ -95,7 +95,7 @@ $(document).on('click', '.delete-favorite', function () {
 		},
 		error: function (data) {
 			console.log(data);
-			alert('Please login in order to use the Favorites feature')
+			bootbox.alert('Please login in order to use the Favorites feature')
 		}
 	});
 

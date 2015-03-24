@@ -33,7 +33,7 @@ $(document).on('click', '#thumbs-down-show', function () {
 		},
 		error: function (data) {
 			console.log(data);
-			alert('Please login in order to use the Thumbs Down feature')
+			bootbox.alert('Please login in order to use the Thumbs Down feature')
 		}
 	});
 
@@ -62,7 +62,7 @@ $(document).on('click', '#remove-thumbs-down', function () {
 			}
 		},
 		error: function (data) {
-			alert('Please login in order to use the Thumbs Down feature')
+			bootbox.alert('Please login in order to use the Thumbs Down feature')
 		}
 	});
 
@@ -92,7 +92,7 @@ $(document).on('click', '.delete-thumbs-down', function () {
 		},
 		error: function (data) {
 			console.log(data);
-			alert('Please login in order to use the Thumbs Down feature')
+			bootbox.alert('Please login in order to use the Thumbs Down feature')
 		}
 	});
 

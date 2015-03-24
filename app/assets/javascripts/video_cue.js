@@ -25,3 +25,6 @@ function nextArtist(event) {
   }
 
 }
+
+$(document).on('page:before-change', function() {
+});

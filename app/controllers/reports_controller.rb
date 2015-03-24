@@ -37,4 +37,20 @@ class ReportsController < ApplicationController
 
   end
 
+  def destroy
+    report = Report.find(params[:id])
+
+    if report.destroy!
+      output = {'success' => 1}.to_json
+    else
+      output = {'success' => 0}.to_json
+    end
+
+    respond_to do |format|
+      format.json {
+        render :json => output
+      }
+    end
+  end
+
 end
