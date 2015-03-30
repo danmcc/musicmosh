@@ -10,6 +10,8 @@ class ShowsController < ApplicationController
       artists_to_skip = current_user.artists_to_skip
     end
 
+    artists_to_skip += Report.all.includes(:show => :artist).pluck(:artist_id)
+
     shows = Show.order(date: :asc).joins(:venue).joins(:artist).where(
       'shows.date >= :date AND venues.country = :country AND venues.state = :state AND venues.city = :city AND shows.artist_id NOT IN (:artists_to_skip)',
       {
