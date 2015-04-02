@@ -68,6 +68,8 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
+gem 'geocoder'
+gem 'migration_data'
 
 #Frontend Gems
 gem 'bootstrap-sass', '~> 3.3.1'

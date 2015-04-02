@@ -35,6 +35,8 @@ class ShowImporter
           name: show[:venue][:name],
           city: show[:venue][:city],
           state: show[:venue][:state],
+          latitude: show[:venue][:latitude],
+          longitude: show[:venue][:longitude],
           country: show[:venue][:country]
         )
 

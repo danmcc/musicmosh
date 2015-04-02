@@ -20,6 +20,8 @@ module MusicMosh
             venue[:city] = 'Lancaster'
             venue[:state] = 'PA'
             venue[:country] = 'US'
+            venue[:latitude] = 40.04154
+            venue[:longitude] = -76.308916
             return venue
           end
         end

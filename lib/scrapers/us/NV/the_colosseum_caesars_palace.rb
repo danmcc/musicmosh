@@ -20,6 +20,8 @@ module MusicMosh
             venue[:city] = 'Las Vegas'
             venue[:state] = 'NV'
             venue[:country] = 'US'
+            venue[:latitude] = 36.117832
+            venue[:longitude] = -115.174958
             return venue
           end
         end

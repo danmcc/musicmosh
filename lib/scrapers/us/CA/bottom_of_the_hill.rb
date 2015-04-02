@@ -40,6 +40,8 @@ module MusicMosh
             venue[:city] = 'San Francisco'
             venue[:state] = 'CA'
             venue[:country] = 'US'
+            venue[:latitude] = 37.76499
+            venue[:longitude] = -122.396435
             return venue
           end
         end

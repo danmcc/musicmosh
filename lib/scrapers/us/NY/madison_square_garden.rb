@@ -20,6 +20,8 @@ require 'kimono_helper'
               venue[:city] = 'New York'
               venue[:state] = 'NY'
               venue[:country] = 'US'
+              venue[:latitude] = 40.750504
+              venue[:longitude] = -73.993439
               return venue
             end
           end

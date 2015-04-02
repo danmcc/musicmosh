@@ -22,6 +22,8 @@ module MusicMosh
             venue[:city] = 'New York'
             venue[:state] = 'NY'
             venue[:country] = 'US'
+            venue[:latitude] = 40.780522
+            venue[:longitude] = -73.981041
             return venue
           end
         end

@@ -20,6 +20,8 @@ module MusicMosh
             venue[:city] = 'Chicago'
             venue[:state] = 'IL'
             venue[:country] = 'US'
+            venue[:latitude] = 41.885499
+            venue[:longitude] = -87.62757
             return venue
           end
         end
