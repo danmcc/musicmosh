@@ -14,7 +14,7 @@ function cuePlaylist(event) {
 function nextArtist(event) {
 
   //If the playlist has ended, redirect to the next artist
-  if (event.data == 0 && !isMobile()) {
+  if (event.data == 0 && !isMobile() && event.target.getPlaylistIndex() == event.target.getPlaylist().length - 1) {
     document.location.href = document.getElementById("next-show-link").getAttribute('href', 2);
   }
 
