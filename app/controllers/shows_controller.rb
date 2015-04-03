@@ -12,16 +12,21 @@ class ShowsController < ApplicationController
 
     artists_to_skip += Report.all.includes(:show => :artist).pluck(:artist_id)
 
-    shows = Show.order(date: :asc).joins(:venue).joins(:artist).where(
-      'shows.date >= :date AND venues.country = :country AND venues.state = :state AND venues.city = :city AND shows.artist_id NOT IN (:artists_to_skip)',
+    if params[:lat].nil?
+      geocoder_query = CGI.unescape(params[:city]) + ', ' + params[:state] + ', ' + params[:country]
+    else
+      geocoder_query = [params[:lat], params[:lon]]
+    end
+
+    shows = Venue.near(geocoder_query, 20, :select => 'venues.*, shows.*, artists.name as artist_name').joins(:show => :artist).order('date ASC').where(
+      'shows.date >= :date AND shows.artist_id NOT IN (:artists_to_skip)',
       {
         date: Date.today,
-        country: params[:country],
-        state: params[:state],
-        city: CGI.unescape(params[:city]),
         artists_to_skip: artists_to_skip << 0 #append 0 to ensure we are passing a valid array
       }
     ).to_a.uniq! { |s| s.artist_id }
+
+    puts YAML::dump(shows)
 
     raise ActionController::RoutingError.new('Not Found') if shows.nil?
 
@@ -67,14 +72,23 @@ class ShowsController < ApplicationController
 
     next_show = shows[next_position - 1]
 
-    @link_to_next_show = view_context.link_to "Next Artist: " + next_show.artist.name, show_location_path(
-                                                                                       :country => params[:country],
-                                                                                       :state => params[:state],
-                                                                                       :city => params[:city],
-                                                                                       :position => next_position
-                                                                                     ), class: "btn btn-default", id: "next-show-link"
+    if params[:lat].nil?
+      @link_to_next_show = view_context.link_to "Next Artist: " + next_show.artist_name, show_location_path(
+                                                                                         :country => params[:country],
+                                                                                         :state => params[:state],
+                                                                                         :city => params[:city],
+                                                                                         :position => next_position
+                                                                                       ), class: "btn btn-default", id: "next-show-link"
+    else
+      @link_to_next_show = view_context.link_to "Next Artist: " + next_show.artist_name, show_location_coordinates_path(
+                                                                                         :lat => params[:lat],
+                                                                                         :lon => params[:lon],
+                                                                                         :position => next_position
+                                                                                       ), class: "btn btn-default", id: "next-show-link"
+    end
 
-    @videos = YoutubeVideoFetcher.fetch(@show.artist.name)
+
+    @videos = YoutubeVideoFetcher.fetch(@show.artist_name)
 
   end
 
