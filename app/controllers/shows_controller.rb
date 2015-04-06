@@ -28,7 +28,7 @@ class ShowsController < ApplicationController
 
     puts YAML::dump(shows)
 
-    raise ActionController::RoutingError.new('Not Found') if shows.nil?
+    return render "shows/no_shows" if shows.nil?
 
     # if there isn't any artist key, assume it's 1
     current_position = (params.has_key?(:position) ? params[:position].to_i : 1)
