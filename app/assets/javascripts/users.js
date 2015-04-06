@@ -21,10 +21,17 @@ $(document).ready(function () {
       spinner.stop();
     }
 
-    navigator.geolocation.getCurrentPosition(function (pos) {
-      spinner.stop();
-      redirectToCoordinates(pos.coords.latitude, pos.coords.longitude);
-    });
+    navigator.geolocation.getCurrentPosition(
+      function (pos) {
+        spinner.stop();
+        redirectToCoordinates(pos.coords.latitude, pos.coords.longitude);
+      },
+      function (error) {
+        spinner.stop();
+        alert('Couldn\'t fetch your location.\n\n'+error.message);
+      },
+      {maximumAge: 300000, timeout: 1000}
+    );
 
   });
 

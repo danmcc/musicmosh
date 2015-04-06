@@ -26,8 +26,6 @@ class ShowsController < ApplicationController
       }
     ).to_a.uniq! { |s| s.artist_id }
 
-    puts YAML::dump(shows)
-
     return render "shows/no_shows" if shows.nil?
 
     # if there isn't any artist key, assume it's 1
