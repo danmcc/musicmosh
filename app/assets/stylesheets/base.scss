@@ -47,7 +47,7 @@ body {
 	}
 
   .dropdown {
-    margin-top: 20px;
+    margin: 20px 0 12px 0;
     text-align: left;
 
     button {
@@ -58,7 +58,7 @@ body {
     }
 
     .dropdown-menu {
-      background-color: rgba(0, 0, 0, 0.4) !important;
+      background-color: rgba(0, 0, 0, 1) !important;
       width: 100%;
       font-size: 24px;
     }
@@ -68,7 +68,8 @@ body {
     }
 
     li > a:hover {
-      background-color: rgba(0, 0, 0, 0.8) !important;
+      color: #000 !important;
+      background-color: rgba(255, 255, 255, 1) !important;
     }
 
   }
@@ -85,6 +86,7 @@ body {
 		color: lightgray;
 		text-align: left;
 		line-height: 0;
+    margin-left: 2px;
 
 		span {
 			cursor: pointer;

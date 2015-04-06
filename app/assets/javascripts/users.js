@@ -1,118 +1,45 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    var locationButton = $( "#location-button" );
+  var locationButton = $("#location-button");
 
-    locationButton.click(function() {
+  locationButton.click(function () {
 
-        var opts = {
-            color: '#FFF',
-            lines: 11, // The number of lines to draw
-            length: 4, // The length of each line
-            width: 2, // The line thickness
-            radius: 3 // The radius of the inner circle
-        };
-        var target = document.getElementById('loading-spinner');
-        var spinner = new Spinner(opts).spin(target);
+    var opts = {
+      color: '#FFF',
+      lines: 11, // The number of lines to draw
+      length: 4, // The length of each line
+      width: 2, // The line thickness
+      radius: 3 // The radius of the inner circle
+    };
+    var target = document.getElementById('loading-spinner');
+    var spinner = new Spinner(opts).spin(target);
 
-        if(!navigator.geolocation) {
-            spinner.stop();
-        }
+    if (!navigator.geolocation) {
+      spinner.stop();
+    }
 
-        navigator.geolocation.getCurrentPosition(function(pos) {
-            geocoder = new google.maps.Geocoder();
-            var latlng = new google.maps.LatLng(pos.coords.latitude,pos.coords.longitude);
-            geocoder.geocode({'latLng': latlng}, function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    //Check result 0
-                    var result = results[0];
-                    console.log(results);
-                    //look for locality tag and administrative_area_level_1
-                    var city = "";
-                    var state = "";
-                    var country = "";
-                    for(var i=0, len=result.address_components.length; i<len; i++) {
-                        var ac = result.address_components[i];
-                        if(ac.types.indexOf("locality") >= 0) city = ac.long_name;
-                        if(ac.types.indexOf("administrative_area_level_1") >= 0) state = ac.long_name;
-                        if(ac.types.indexOf("country") >= 0) country = ac.short_name;
-                    }
-                    //only report if we got Good Stuff
-                    if(city != '' && state != '') {
-                        $("#city").val(city);
-                        $("#state").val(state);
-                        $("#country").val(country);
-                    }
-                }
-                spinner.stop();
-            });
-
-        });
-
-        $("#city").focus();
-
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      spinner.stop();
+      redirectToCoordinates(pos.coords.latitude, pos.coords.longitude);
     });
 
-    var showsForm = $("#shows-form");
-
-    $("#city").focus();
-
-    showsForm.submit(function(e) {
-        e.preventDefault();
-
-        var city = $("#city").val();
-        var state = $("#state").val();
-        var country = $("#country").val();
-
-        if(state == '' && country == '')
-        {
-            getStateAndCountryAndRedirect(city);
-        } else {
-            redirectToCity(city, state, country);
-        }
-
-    });
-
+  });
 
 });
 
-function getStateAndCountryAndRedirect(city) {
-
-    var geocoder = new google.maps.Geocoder();
-    var state;
-    var country;
-
-    geocoder.geocode( { 'address': city}, function(results, status) {
-        console.log(results);
-        if( status == google.maps.GeocoderStatus.OK ) {
-            var result = results[0];
-            for (var i = 0, len = result.address_components.length; i < len; i++) {
-                var ac = result.address_components[i];
-                if (ac.types.indexOf("administrative_area_level_1") >= 0) state = ac.short_name;
-                if (ac.types.indexOf("country") >= 0) country = ac.short_name;
-            }
-        }
-
-        redirectToCity(city, state, country);
-
-    });
+function getBaseUrl() {
+  var getUrl = window.location;
+  return getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 }
 
-function redirectToCity(city, state, country) {
+function redirectToCoordinates(latitude, longitude) {
+  var baseUrl = getBaseUrl();
 
-    var showsForm = $("#shows-form");
+  var completeUrl = baseUrl + 'shows/' + latitude + '/' + longitude;
 
-    city = encodeURIComponent(city).replace(/%20/g, "+").toLowerCase();
-    state = encodeURIComponent(state).replace(/%20/g, "+").toLowerCase();
-
-    var baseUrl = showsForm.attr('action');
-
-    var completeUrl = baseUrl + '/' + country + '/' + state + '/' + city;
-
-    //window.location.href = completeUrl;
-
-    console.log(baseUrl + '/' + country + '/' + state + '/' + city);
+  window.location.href = completeUrl;
 
 }
